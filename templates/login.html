@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/x-icon" href="#"/>
-    <link type="text/css" rel="styleSheet" href="/static/css/main.css"/>
+    {#    <link type="text/css" rel="styleSheet" href="/static/css/main.css"/>#}
+    <script src="/static/js/jquery-3.3.1.js"></script>
+    <script src="/static/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>账号登录</title>
+    <title>咸鱼登录/注册</title>
     <style>
         * {
             margin: 0;
@@ -18,10 +21,10 @@
             height: 100%;
         }
 
-        @font-face {
+        /*@font-face {
             font-family: 'neo';
             src: url("/static/css/font/NEOTERICc.ttf");
-        }
+        }*/
 
         input:focus {
             outline: none;
@@ -41,7 +44,7 @@
         .form input::placeholder {
             color: rgba(255, 255, 255, 0.8);
             font-size: 18px;
-            font-family: "neo";
+        {#font-family: "neo";#}
         }
 
         .confirm {
@@ -59,8 +62,7 @@
             color: #fff;
             cursor: pointer;
             margin-top: 25px;
-            font-family: "neo";
-            transition: .25s;
+        {#font-family: "neo";#} transition: .25s;
         }
 
         .btn:hover {
@@ -71,8 +73,7 @@
             width: 980px;
             min-height: 500px;
             border-radius: 10px;
-            font-family: "neo";
-            overflow: hidden;
+        {#font-family: "neo";#} overflow: hidden;
             box-shadow: 0px 0px 120px rgba(0, 0, 0, 0.25);
             position: fixed;
             top: 50%;
@@ -330,6 +331,8 @@
 
 <body>
 <div id="bg">
+
+
     <div id="hint"><!-- 提示框 -->
         <p>登录失败</p>
     </div>
@@ -339,21 +342,32 @@
                 <i style="top: 0">登录</i>
                 <i style="top: 35px">注册</i>
             </div>
+
             <span>
                     <form action="post">
-                        <p class="form"><input type="number" id="telephone" name="telephone" placeholder="请输入手机号" required></p>
+                        <p class="form"><input type="number" id="telephone" name="telephone" placeholder="请输入手机号"
+                        ></p>
 
-                        <p class="form"><input type="password" id="passwd" name="passwd" placeholder="请输入密码" required></p>
+                        <p class="form"><input type="password" id="passwd" name="passwd" placeholder="请输入密码"
+                        ></p>
                         <p class="form confirm"><input type="password" id="confirm-passwd" name="confirm-passwd"
-                                                       placeholder="请确认密码" required></p>
-                        <p class="form confirm user"><input type="text" id="user" name="user" placeholder="请输入用户名" required></p>
+                                                       placeholder="请确认密码"></p>
+                        <p class="form confirm user"><input type="text" id="user" name="user" placeholder="请输入用户名"
+                        ></p>
+                        <p class="form confirm code"><input type="number" id="code" name="code" placeholder="请输入手机验证码"
+                        ></p>
+{#                        <p class="form confirm email"><input type="email" id="email" name="email" placeholder="请输入邮箱"#}
+{#                        ></p>#}
 
-                        <p class="form confirm email"><input type="email" id="email" name="email" placeholder="请输入邮箱" required></p>
-
-                        <input type="button" value="登录" class="btn" onclick="login()" style="margin-right: 20px;">
+                        <input type="button" value="登录" class="btn login" onclick="login()" style="margin-right: 20px;">
                         <input type="button" value="注册" class="btn" onclick='signin()' id="btn">
+                        <p class="form confirm getcode"><input type="button" value="获取验证码" onclick="get_code()"
+                                                               id="getcode" name="getcode"></p>
+{#                        <input type="button" value="注册" class="btn register" id="btn">#}
                     </form>
-                    <a href="#">忘记密码</a>
+
+                    <a href="{% url 'contact_me' %}">忘记密码</a>
+
                 </span>
         </div>
 
@@ -380,13 +394,38 @@
         </div>
     </div>
 </div>
+
+<!--增加模态框-->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">信息提示</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn-primary">了解</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 </body>
-<script src="/static/js/jquery-3.3.1.js"></script>
 <script>
     var onoff = true//根据此布尔值判断当前为注册状态还是登录状态
     var confirm = document.getElementsByClassName("confirm")[0]
     var user = document.getElementsByClassName("user")[0]
-    var email = document.getElementsByClassName("email")[0]
+    {#var email = document.getElementsByClassName("email")[0]#}
+    var code = document.getElementsByClassName("code")[0]
+    var getcode = document.getElementsByClassName("getcode")[0]
     //var user = document.getElementById("user")
     //var passwd = document.getElementById("passwd")
     //var con_pass = document.getElementById("confirm-passwd")
@@ -400,13 +439,13 @@
             name_c.innerHTML += "<i>" + name[i] + "</i>"
 
     //引用hint()在最上方弹出提示
-    function hint() {
+    /*function hint() {
         let hit = document.getElementById("hint")
         hit.style.display = "block"
         setTimeout("hit.style.opacity = 1", 0)
         setTimeout("hit.style.opacity = 0", 2000)
         setTimeout('hit.style.display = "none"', 3000)
-    }
+    }*/
 
     //回调函数
     /*function submit(callback) {
@@ -435,36 +474,101 @@
         let status = document.getElementById("status").getElementsByTagName("i")
         console.log(status)
         let hit = document.getElementById("hint").getElementsByTagName("p")[0]
+        {#var email_reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;#}
+        var code_reg = /^\d{4}$/;
+
         if (onoff) {
-            confirm.style.height = 51 + "px"
-            user.style.height = 51 + "px"
-            email.style.height = 51 + "px"
+
+            confirm.style.height = 45 + "px"
+            user.style.height = 45 + "px"
+            {#email.style.height = 51 + "px"#}
+            code.style.height = 45 + "px"
+            getcode.style.height = 45 + "px"
             status[0].style.top = 35 + "px"
             status[1].style.top = 0
-            {#status[2].style.top = 0#}
-            {#status[3].style.top = 0#}
             onoff = !onoff
+            console.log('hit', hit)
         } else {
-            /*if (!/^[A-Za-z0-9]+$/.test(user.value))
-                hit.innerHTML = "账号只能为英文和数字"
-            else if (user.value.length < 6)
-                hit.innerHTML = "账号长度必须大于6位"
-            else if (passwd.value.length < 6)
-                hit.innerHTML = "密码长度必须大于6位"
-            else if (passwd.value != con_pass.value)
-                hit.innerHTML = "两次密码不相等"
-            else if (passwd.value = con_pass.value) {
-                submit(function(res) {
-                    if (res == "exist")
-                        hit.innerHTML = "该账号已存在"
-                    else if (res == true) {
-                        hit.innerHTML = "账号注册成功，两秒后自动刷新页面"
-                        setTimeout("window.location.reload()", 2000)
-                    } else if (res == false)
-                        hit.innerHTML = "账号注册失败"
-                })
+            console.log(onoff)
+            {#if (!/^[A-Za-z0-9]+$/.test(user.value))#}
+            /* 不能为空 */
+            {#if (($('#telephone').val() && $('#passwd').val() && $('#confirm-passwd').val() && $('#email').val() && $('#user').val()) == "") {#}
+            if (($('#telephone').val() && $('#passwd').val() && $('#confirm-passwd').val() && $('#code').val() && $('#user').val()) == "") {
+                {#alert('注册信息需要全部填写')#}
+                $('.modal-body').text('注册信息需要全部填写')
+                $('#myModal').modal('show')
+            } else if (!/^[A-Za-z][A-Za-z0-9]+$/.test($("#user").val())) {
+                {#hit.innerHTML = "账号只能为英文和数字"#}
+                {#alert("账号只能为英文和数字")#}
+                $('.modal-body').text('账号只能为英文和数字,以英文开头')
+                $('#myModal').modal('show')
             }
-            hint()*/
+                {#else if (user.value.length < 6)#}
+            else if (($("#user").val()).length < 6 || ($('#user').val()).length > 20) {
+                {#hit.innerHTML = "账号长度必须大于6位"#}
+                {#alert("账号长度必须大于6位")#}
+                $('.modal-body').text('账号长度必须大于6位小于20位')
+                $('#myModal').modal('show')
+
+            } else if (passwd.value.length < 6 || ($('#passwd').val().length > 20)) {
+                {#hit.innerHTML = "密码长度必须大于6位"#}
+                {#alert("密码长度必须大于6位")#}
+                $('.modal-body').text('密码长度必须大于6位小于20位')
+                $('#myModal').modal('show')
+
+            } else if (passwd.value != $('#confirm-passwd').val()) {
+                {#hit.innerHTML = "两次密码不相等"#}
+                {#alert("两次密码不相等")#}
+                $('.modal-body').text('两次密码不相等,请重输')
+                $('#myModal').modal('show')
+
+            } else if (!code_reg.test($('#code').val())) {
+                {#console.log($('#email').val())#}
+                $('.modal-body').text('验证码错误,请修改')
+                $('#myModal').modal('show')
+            }
+            /*else if (!email_reg.test($('#email').val())) {
+                $('.modal-body').text('邮箱格式错误,请修改')
+                $('#myModal').modal('show')
+            }*/
+            else if (!(/^1[3|4|5|7|8][0-9]\d{4,8}$/.test($('#telephone').val()))) {
+                {#console.log($('#email').val())#}
+                $('.modal-body').text('手机格式错误,请修改')
+                $('#myModal').modal('show')
+            } else if (passwd.value == $('#confirm-passwd').val()) {
+                $.ajax({
+                    url: "{% url 'register' %}",
+                    type: 'POST',
+                    data: {
+                        username: $('#user').val(),
+                        passwd: $('#passwd').val(),
+                        telephone: $('#telephone').val(),
+                        code: $('#code').val(),
+                        {#email: $('#email').val(),#}
+
+                    },
+                    success: function (res) {
+                        if (res['status'] == '101') {
+                            {#hit.innerHTML = "该账号已存在"#}
+                            $('.modal-body').text('该账号已存在')
+                            $('#myModal').modal('show')
+                        } else if (res['status'] == '100') {
+                            {#hit.innerHTML = "账号注册成功，两秒后自动刷新页面"#}
+                            $('.modal-body').text('账号注册成功，两秒后自动刷新页面')
+                            $('#myModal').modal('show')
+                            setTimeout("window.location.reload()", 2000)
+                        } else if (res['status'] == '102') {
+                            {#hit.innerHTML = "账号注册失败"#}
+                            $('.modal-body').text(res['msg'])
+                            $('#myModal').modal('show')
+                        }
+
+                    }
+                })
+
+
+            }
+            {#hint()#}
         }
     }
 
@@ -473,49 +577,94 @@
         if (onoff) {
 
             $.ajax({
-               url: "{% url 'login' %}",
-               type: 'POST',
-               data: {
-                   username: $('#user').val(),
-                   passwd: $('#passwd').val(),
-               },
-               success: function (data) {
-                   {#console.log(data)#}
-                   console.log(data['msg'])
-               }
+                url: "{% url 'login' %}",
+                type: 'POST',
+                data: {
+                    telephone: $('#telephone').val(),
+                    passwd: $('#passwd').val(),
+                }, success: function (res) {
+                    console.log(res)
+                    {#console.log(data)#}
+                    {#console.log(data['msg'])#}
+                    if (res['status'] == 200) {
+                        $('.modal-body').text('登录成功,将跳转首页')
+                        $('#myModal').modal('show')
+                        setTimeout("window.location.href='/index/'", 2000)
+                    } else if (res['status'] == 100) {
+                        $('.modal-body').text(res['msg'])
+                        $('#myModal').modal('show')
+                    } else {
+                        $('.modal-body').text('登录失败')
+                        $('#myModal').modal('show')
+                    }
+
+                },
             });
 
 
+            /* let request = new XMLHttpRequest()
+             let url = "url login"
+             request.open("post", url, true)
+             let data = new FormData()
+             data.append("username", user.value)
+             data.append("passwd", passwd.value)
+             request.onreadystatechange = function () {
+                 console.log(this.readyState)
+                 if (this.readyState == 4) {
+                     console.log(this.responseText)
+                     if (this.responseText == false)
+                         hint()
+                     else
+                         window.location.href = this.responseText;
+                 }
+             }
 
-
-           /* let request = new XMLHttpRequest()
-            let url = "url login"
-            request.open("post", url, true)
-            let data = new FormData()
-            data.append("username", user.value)
-            data.append("passwd", passwd.value)
-            request.onreadystatechange = function () {
-                console.log(this.readyState)
-                if (this.readyState == 4) {
-                    console.log(this.responseText)
-                    if (this.responseText == false)
-                        hint()
-                    else
-                        window.location.href = this.responseText;
-                }
-            }
-
-            request.send(data)*/
+             request.send(data)*/
         } else {
             let status = document.getElementById("status").getElementsByTagName("i")
             confirm.style.height = 0
             user.style.height = 0
-            email.style.height = 0
-
+            {#email.style.height = 0#}
+            code.style.height = 0
+            getcode.style.height = 0
             status[0].style.top = 0
             status[1].style.top = 35 + "px"
             onoff = !onoff
         }
+    }
+
+    //获取验证码按钮
+    function get_code() {
+        if (!($('#telephone').val()) || !(/^1[3|4|5|7|8][0-9]\d{4,8}$/.test($('#telephone').val()))) {
+            $('.modal-body').text('手机格式错误,请修改')
+            $('#myModal').modal('show')
+        } else {
+            $.ajax({
+                url: {% url 'getcode' %},
+                type: 'POST',
+                data: {
+                    csrfmiddlewaretoken: "{{ csrf_token }}",
+                    telephone: $('#telephone').val()
+                }, success: function (res) {
+                    if (res['status'] != '200') {
+                        $('.modal-body').text(res['msg'])
+                        $('#myModal').modal('show')
+                    } else {
+                        $('.modal-body').text('验证码已发送,30分钟内有效')
+                        $('#myModal').modal('show')
+                    }
+                }, error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    $('.modal-body').text('操作过于频繁,请一小时后再操作')
+                    $('#myModal').modal('show')
+                },
+                /*statusCode: {
+                    429: function () {
+                        alert("Exceeded request limit.");
+                    }
+                }*/
+            })
+        }
+
     }
 
 </script>

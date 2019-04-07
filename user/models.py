@@ -18,10 +18,12 @@ class User(AbstractUser):
     """
     id = models.AutoField(primary_key=True)
     type_choices = ((0, '普通用户'), (1, '超级用户'), (2, '冻结用户'))
+    tel_choices = ((0, '未验证'), (1, '已验证'))
     username = models.CharField(unique=True, max_length=64, verbose_name='用户名')
     password = models.CharField(max_length=64, verbose_name='密码')
-    # email = models.EmailField()
+    email = models.EmailField(null=True)
     telephone = models.BigIntegerField(unique=True, verbose_name='手机号')
+    telephone_status = models.PositiveIntegerField(choices=tel_choices, default=0)
     created_time = models.DateField(auto_now_add=True, verbose_name='用户注册日期')
     balance = models.DecimalField(default=0.0, max_digits=10, decimal_places=2, verbose_name='余额')
     user_type = models.IntegerField(choices=type_choices, default=2, verbose_name='用户类型')
@@ -158,7 +160,7 @@ class Order(models.Model):
     order_status = models.PositiveIntegerField(choices=order_status_choices, default=0, verbose_name='订单状态')
     bill_status = models.IntegerField(choices=bill_status_choices, default=0, verbose_name='钱款状态')
     amount = models.PositiveIntegerField(null=True, verbose_name='交易金额')
-    delicery_account = models.PositiveIntegerField(verbose_name='运费')
+    delicery_account = models.PositiveIntegerField(null=True, verbose_name='运费')
     delivery = models.ForeignKey(to='Delivery', null=True, on_delete=models.SET_NULL, db_constraint=False)
     created_time = models.DateField(auto_now_add=True, verbose_name='订单生成时间')
 

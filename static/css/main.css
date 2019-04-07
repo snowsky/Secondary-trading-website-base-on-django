@@ -8,10 +8,10 @@ body {
     height: 100%;
 }
 
-@font-face {
+/*@font-face {
     font-family: 'neo';
     src: url("/static/css/font/NEOTERICc.ttf");
-}
+}*/
 input:focus{
 	outline: none;
 }
@@ -28,7 +28,7 @@ input:focus{
 .form input::placeholder{
     color: rgba(255,255,255,0.8);
     font-size: 18px;
-    font-family: "neo";
+    /*font-family: "neo";*/
 }
 .confirm{
     height: 0;
@@ -44,7 +44,7 @@ input:focus{
 	color: #fff;
     cursor: pointer;
     margin-top: 25px;
-    font-family: "neo";
+    /*font-family: "neo";*/
     transition: .25s;
 }
 .btn:hover{
@@ -54,7 +54,7 @@ input:focus{
     width: 980px;
     min-height: 500px;
     border-radius: 10px;
-    font-family: "neo";
+    /*font-family: "neo";*/
     overflow: hidden;
     box-shadow: 0px 0px 120px rgba(0, 0, 0, 0.25);
     position: fixed;

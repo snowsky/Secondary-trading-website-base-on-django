@@ -130,3 +130,12 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+
+# REST框架配置信息
+REST_FRAMEWORK = {
+    # 'DEFAULT_THROTTLE_CLASSES': ['user.salt_user_auth.UserGetCode', ],
+    'DEFAULT_THROTTLE_RATES': {
+        'get_code': '4/h'
+    }
+}
