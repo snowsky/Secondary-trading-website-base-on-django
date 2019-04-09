@@ -580,6 +580,7 @@
                 url: "{% url 'login' %}",
                 type: 'POST',
                 data: {
+                    {#csrfmiddlewaretoken: "{{ csrf_token }}",#}
                     telephone: $('#telephone').val(),
                     passwd: $('#passwd').val(),
                 }, success: function (res) {
@@ -654,7 +655,7 @@
                         $('#myModal').modal('show')
                     }
                 }, error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    $('.modal-body').text('操作过于频繁,请一小时后再操作')
+                    $('.modal-body').text('请一分钟后重试')
                     $('#myModal').modal('show')
                 },
                 /*statusCode: {

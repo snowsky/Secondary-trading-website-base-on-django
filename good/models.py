@@ -18,12 +18,15 @@ class Good(models.Model):
     SELL_FACE_TO_FACE = 0
     SELL_BY_DELIVERY = 1
     SELL_ALL_OK = 2
+    # good_stat
     sell_method_choices = ((SELL_FACE_TO_FACE, '同城当面交易'), (SELL_BY_DELIVERY, '快递'), (SELL_ALL_OK, '不限交易方式'))
+    good_status_choices = ((0, '在售'), (1, '已售出'))
     title = models.CharField(max_length=128, verbose_name='商品标题')
     content = models.TextField(verbose_name='商品详情')
     original_price = models.DecimalField(max_digits=8, decimal_places=2, verbose_name='原价')
     current_price = models.DecimalField(max_digits=8, decimal_places=2, verbose_name='现价')
-    sell_method = models.PositiveIntegerField(choices=sell_method_choices, default=2, verbose_name='交易方式')
+    sell_method = models.SmallIntegerField(choices=sell_method_choices, default=2, verbose_name='交易方式')
+    good_status = models.SmallIntegerField(choices=good_status_choices, default=0, verbose_name='商品状态')
     owner_user = models.ForeignKey(to='user.User', related_name='good_owner_user', null=True, on_delete=models.SET_NULL, db_constraint=False, verbose_name='商品发布者')
     # 加一个关注商品的用户
     star_users = models.ManyToManyField(to='user.User', related_name='good_star_users', db_constraint=False, verbose_name='关注用户')
@@ -32,11 +35,20 @@ class Good(models.Model):
     class Meta:
         verbose_name_plural = verbose_name = '商品'
 
+    def __str__(self):
+        return self.title
+
 
 class Category(models.Model):
-    name = models.CharField(max_length=64)
-    create_user = models.OneToOneField(to='user.User', null=True, on_delete=models.SET_NULL, db_constraint=False)
-    created_time = models.DateField(auto_now_add=True, null=True)
+    name = models.CharField(unique=True, max_length=64)
+
+    class Meta:
+        verbose_name_plural = verbose_name = '分类'
+
+    def __str__(self):
+        return self.name
+    # create_user = models.OneToOneField(to='user.User', null=True, on_delete=models.SET_NULL, db_constraint=False)
+    # created_time = models.DateField(auto_now_add=True, null=True)
 
 
 class GoodPictures(models.Model):
@@ -53,6 +65,9 @@ class GoodPictures(models.Model):
 
     class Meta:
         verbose_name_plural = verbose_name = '商品图片'
+
+    def __str__(self):
+        return self.image
 
 
 class Comment(models.Model):

@@ -6,4 +6,4 @@ class UserGetCode(SimpleRateThrottle):
 
     def get_cache_key(self, request, view):
         self.get_ident(request)
-        return request.POST.get('telephone')
+        return request.META.get('REMOTE_ADDR')

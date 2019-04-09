@@ -16,13 +16,13 @@ class User(AbstractUser):
     余额
     账户类型(超级账户负责管理和保证金交易),普通用户
     """
-    id = models.AutoField(primary_key=True)
+    # id = models.AutoField(primary_key=True)
     type_choices = ((0, '普通用户'), (1, '超级用户'), (2, '冻结用户'))
     tel_choices = ((0, '未验证'), (1, '已验证'))
     username = models.CharField(unique=True, max_length=64, verbose_name='用户名')
-    password = models.CharField(max_length=64, verbose_name='密码')
+    # password = models.CharField(max_length=64, verbose_name='密码')
     email = models.EmailField(null=True)
-    telephone = models.BigIntegerField(unique=True, verbose_name='手机号')
+    telephone = models.BigIntegerField(unique=True, verbose_name='手机号', null=True)
     telephone_status = models.PositiveIntegerField(choices=tel_choices, default=0)
     created_time = models.DateField(auto_now_add=True, verbose_name='用户注册日期')
     balance = models.DecimalField(default=0.0, max_digits=10, decimal_places=2, verbose_name='余额')

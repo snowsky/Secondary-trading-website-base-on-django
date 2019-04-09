@@ -52,6 +52,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'user.user_token_middleware.UserTokenMiddleware',
 ]
 
 ROOT_URLCONF = 'salt_fish.urls'
@@ -137,6 +139,6 @@ STATICFILES_DIRS = [
 REST_FRAMEWORK = {
     # 'DEFAULT_THROTTLE_CLASSES': ['user.salt_user_auth.UserGetCode', ],
     'DEFAULT_THROTTLE_RATES': {
-        'get_code': '4/h'
+        'get_code': '1/m'
     }
 }
