@@ -50,10 +50,10 @@ class LoginView(APIView):
             try:
                 keys = conn.keys()
                 keys = [str(key, encoding='utf-8') for key in keys]
-                print('client_token', client_token)
-                print('keys', keys)
+                # print('client_token', client_token)
+                # print('keys', keys)
                 # print(keys[3])
-                print('status', client_token in keys)
+                # print('status', client_token in keys)
                 # print()
 
             except Exception as e:

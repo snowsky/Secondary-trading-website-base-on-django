@@ -12,8 +12,8 @@ class GoodAdmin(admin.ModelAdmin):
 
 @admin.register(GoodPictures)
 class GoodPicturesAdmin(admin.ModelAdmin):
-    fields = ('image', 'is_main_pic', 'good')
-    list_display = ('image', 'is_main_pic', 'good')
+    fields = ('image_path', 'is_main_pic', 'good')
+    list_display = ('image_path', 'is_main_pic', 'good')
 
 
 @admin.register(Category)

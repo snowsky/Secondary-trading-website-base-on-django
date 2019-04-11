@@ -11,7 +11,6 @@ class Good(models.Model):
     商品现价
     商品交易方式(同城当面,快递,都可以)
     商品状态(已发布,交易中,交易完成)
-    评价(关联评价表的商品)
     关注商品的用户,多对多关联到用户表
     商品所属分类
     """
@@ -30,7 +29,8 @@ class Good(models.Model):
     owner_user = models.ForeignKey(to='user.User', related_name='good_owner_user', null=True, on_delete=models.SET_NULL, db_constraint=False, verbose_name='商品发布者')
     # 加一个关注商品的用户
     star_users = models.ManyToManyField(to='user.User', related_name='good_star_users', db_constraint=False, verbose_name='关注用户')
-    category = models.ForeignKey(to='Category', null=True, on_delete=models.SET_NULL, db_constraint=False)
+    category = models.ForeignKey(to='Category',null=True, on_delete=models.SET_NULL, db_constraint=False)
+    created_time = models.DateField(auto_now_add=True, null=True)
 
     class Meta:
         verbose_name_plural = verbose_name = '商品'
@@ -58,8 +58,9 @@ class GoodPictures(models.Model):
     是否是主图
     一个商品对应多个图片,在多的一方图片类中加外键,关联商品类
     """
-    image = models.ImageField(verbose_name='图片')
-    is_main_pic = models.BooleanField(default=0, verbose_name='是否是主图')
+    image_status_choices = ((0, '非主图'), (1, '主图'))
+    image_path = models.CharField(unique=True, max_length=254, null=True, verbose_name='图片存储路径')
+    is_main_pic = models.SmallIntegerField(default=0, choices=image_status_choices, verbose_name='是否是主图')
     # 加外键关联商品
     good = models.ForeignKey(to='Good', null=True, on_delete=models.SET_NULL, db_constraint=False, verbose_name='对应商品')
 
@@ -67,7 +68,7 @@ class GoodPictures(models.Model):
         verbose_name_plural = verbose_name = '商品图片'
 
     def __str__(self):
-        return self.image
+        return self.__class__.__name__
 
 
 class Comment(models.Model):
