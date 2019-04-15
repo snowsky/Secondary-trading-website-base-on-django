@@ -1,8 +1,9 @@
 from rest_framework import serializers
 from good.models import Good, GoodPictures
 from rest_framework.exceptions import ValidationError
-from good.models import Good, Category
+from good.models import Good, Category, GoodStatusAndSellMethod
 from user.models import User
+
 
 
 class GoodAndPictureSerializers(serializers.Serializer):
@@ -35,7 +36,8 @@ class GoodAndPictureSerializers(serializers.Serializer):
     content = serializers.CharField(min_length=10)
     original_price = serializers.FloatField(min_value=0.1, error_messages={'min_value': '价格不能为负数'})
     current_price = serializers.FloatField(min_value=0.1, error_messages={'min_value': '价格不能为负数'})
-    sell_method = serializers.ChoiceField(choices=((0, '同城当面交易'), (1, '快递'), (2, '不限交易方式')))
+    sell_method = serializers.IntegerField()
+    good_status = serializers.IntegerField()
     owner_user = serializers.IntegerField()
     category = serializers.IntegerField()
     # 商品照片Picture的字段
@@ -51,6 +53,8 @@ class GoodAndPictureSerializers(serializers.Serializer):
     img8 = serializers.FileField(required=False)
     img9 = serializers.FileField(required=False)
 
+    # method = serializers.ChoiceField(choices=((0, '发布'), (1, '更新')))
+
     # 该字段存成列表形式,用来确认前端到底传了几张图片来
     image = serializers.ListField()
 
@@ -59,9 +63,16 @@ class GoodAndPictureSerializers(serializers.Serializer):
     def create(self, validated_data):
         # 偷梁换柱,把传来的外键的id转换成对象,再替换掉validated_data中对应的数据
         # 这样再保存数据就不会有问题
+        print(validated_data)
         user_id = validated_data['owner_user']
         user = User.objects.get(pk=user_id)
         validated_data['owner_user'] = user
+
+        # 转换交易方式将id转成对象
+        sell_method_id = validated_data['sell_method']
+        validated_data['sell_method'] = GoodStatusAndSellMethod.objects.get(status_number=sell_method_id)
+        good_status_id = validated_data['good_status']
+        validated_data['good_status'] = GoodStatusAndSellMethod.objects.get(status_number=good_status_id)
 
         # 转换分类标签
         category_id = validated_data['category']
@@ -90,17 +101,14 @@ class GoodAndPictureSerializers(serializers.Serializer):
         validated_data.pop('main_img')
         # print(validated_data)
 
-        return instance.objects.update(**validated_data)
+        return instance.update(**validated_data)
 
 
-class GoodSerializers(serializers.Serializer):
+class GoodSerializers(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
         model = Good
-    sell_method_choices = serializers.ModelSerializer()
 
-    def get_sell_method_choices(self, obj):
-        return obj.sell_method_choices
 
 
 # class GoodSerializers(serializers.ModelSerializer):

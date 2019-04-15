@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from good.models import Good, GoodPictures, Category
+from good.models import Good, GoodPictures, Category, GoodStatusAndSellMethod
 
 
 @admin.register(Good)
@@ -20,4 +20,10 @@ class GoodPicturesAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     fields = ('name', )
     list_display = ('name', )
+
+
+@admin.register(GoodStatusAndSellMethod)
+class GoodStatusAndSellMethod(admin.ModelAdmin):
+    fields = ('status_number', 'status_content')
+    list_display = ('status_number', 'status_content')
 

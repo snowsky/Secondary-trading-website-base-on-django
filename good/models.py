@@ -19,13 +19,17 @@ class Good(models.Model):
     SELL_ALL_OK = 2
     # good_stat
     sell_method_choices = ((SELL_FACE_TO_FACE, '同城当面交易'), (SELL_BY_DELIVERY, '快递'), (SELL_ALL_OK, '不限交易方式'))
-    good_status_choices = ((0, '在售'), (1, '已售出'))
+    # good_status_choices = ((0, '在售'), (1, '已售出'))
     title = models.CharField(max_length=128, verbose_name='商品标题')
     content = models.TextField(verbose_name='商品详情')
-    original_price = models.DecimalField(max_digits=8, decimal_places=2, verbose_name='原价')
-    current_price = models.DecimalField(max_digits=8, decimal_places=2, verbose_name='现价')
-    sell_method = models.SmallIntegerField(choices=sell_method_choices, default=2, verbose_name='交易方式')
-    good_status = models.SmallIntegerField(choices=good_status_choices, default=0, verbose_name='商品状态')
+    # original_price = models.DecimalField(max_digits=8, decimal_places=2, verbose_name='原价')
+    original_price = models.FloatField(verbose_name='原价')
+    current_price = models.FloatField(verbose_name='现价')
+    # current_price = models.DecimalField(max_digits=8, decimal_places=2, verbose_name='现价')
+    # sell_method = models.SmallIntegerField(choices=sell_method_choices, default=2, verbose_name='交易方式')
+    # good_status = models.SmallIntegerField(choices=good_status_choices, default=0, verbose_name='商品状态')
+    sell_method = models.ForeignKey(to='GoodStatusAndSellMethod', related_name='good_sell_method', null=True, on_delete=models.SET_NULL, db_constraint=False, verbose_name='交易方式')
+    good_status = models.ForeignKey(to='GoodStatusAndSellMethod', related_name='good_status', null=True, on_delete=models.SET_NULL, db_constraint=False, verbose_name='商品状态')
     owner_user = models.ForeignKey(to='user.User', related_name='good_owner_user', null=True, on_delete=models.SET_NULL, db_constraint=False, verbose_name='商品发布者')
     # 加一个关注商品的用户
     star_users = models.ManyToManyField(to='user.User', related_name='good_star_users', db_constraint=False, verbose_name='关注用户')
@@ -37,6 +41,19 @@ class Good(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class GoodStatusAndSellMethod(models.Model):
+    # id = models.AutoField(primary_key=True)
+    status_number = models.CharField(unique=True, max_length=50)
+    status_content = models.CharField(unique=True, max_length=50)
+
+    class Meta:
+        # unique_together = ('status_number', 'status_content')
+        verbose_name_plural = verbose_name = '商品及交易方式'
+
+    def __str__(self):
+        return self.status_content
 
 
 class Category(models.Model):

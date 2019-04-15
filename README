@@ -33,3 +33,39 @@ msg:
 200 '商品删除成功'
 200 '订单查询成功'
 200 '用户查询成功'
+
+
+# 交易方式和商品状态
+8   不限交易方式
+7	快递
+6	当面交易
+5	审核失败
+4	交易完成
+3	交易中
+2	已发布
+1	待审核
+
+# 商品分类
+1	手机
+2	数码
+3	租房
+4	服装
+5	居家
+6	美妆
+7	运动
+8	家电
+9	玩具乐器
+
+
+# /login
+get 获取登录页面
+
+post 携带用户数据
+登录时携带token,telephone, passwd,先验证token,没有token再进行用户名和账号验证
+
+# /good/release
+get 获取商品发布的页面,携带cookie中的token即可, 没有带token的,先去/login进行post用户信息登录
+返回当前所有的分类,Category
+和所有的商品交易方式和状态,GoodStatusAndSellMethod
+
+post
