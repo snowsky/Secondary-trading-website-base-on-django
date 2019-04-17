@@ -2,50 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9624fa3b-3b3f-465a-8cbb-4235894d7153" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/good/utils/salt_fish_spider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/35d83ca0-463f-4293-baf4-1910f36bb8a3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/35d83ca0-463f-4293-baf4-1910f36bb8a3/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/35d83ca0-463f-4293-baf4-1910f36bb8a3/storage_v2/_src_/schema/sys.zb4BAA.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/good/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good/migrations/0002_auto_20190408_1311.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good/migrations/0003_auto_20190408_1337.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good/migrations/0004_auto_20190408_1338.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good/migrations/0005_auto_20190408_1354.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good/migrations/0006_auto_20190408_1356.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good/migrations/0007_good_created_time.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good/migrations/0008_auto_20190411_1159.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good/migrations/0009_auto_20190412_0839.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good/migrations/0010_auto_20190412_0905.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good/migrations/0011_auto_20190414_2044.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good/migrations/0013_auto_20190415_1652.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/good/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/good/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/good/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/good/utils/good_serilization.py" beforeDir="false" afterPath="$PROJECT_DIR$/good/utils/good_serilization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/good/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/good/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salt_fish/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/salt_fish/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salt_fish/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/salt_fish/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/migrations/0002_auto_20190402_0819.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/migrations/0003_auto_20190402_0819.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/migrations/0004_auto_20190402_1209.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/migrations/0005_auto_20190402_1921.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/migrations/0006_auto_20190407_1548.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/migrations/0007_auto_20190407_1551.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/migrations/0008_auto_20190407_1553.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/migrations/0009_auto_20190407_1734.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/migrations/0010_user_telephone_status.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/migrations/0012_auto_20190408_1321.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -149,8 +106,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3608">
-              <caret line="178" selection-start-line="178" selection-end-line="178" />
+            <state relative-caret-position="198">
+              <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -575,7 +532,7 @@
       <workItem from="1555140503535" duration="94000" />
       <workItem from="1555159080790" duration="731000" />
       <workItem from="1555224784496" duration="25820000" />
-      <workItem from="1555418527960" duration="14015000" />
+      <workItem from="1555418527960" duration="14269000" />
     </task>
     <task id="LOCAL-00001" summary="增加商品和订单app,将应用的model层内容分隔开">
       <created>1554643705854</created>
@@ -605,11 +562,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555320859210</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="商品部分接口全部完成">
+      <created>1555494226747</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1555494226747</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214056000" />
+    <option name="totallyTimeSpent" value="214310000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -629,7 +593,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32939634" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49820274" visible="true" weight="0.3464567" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49820274" visible="true" weight="0.3464567" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39895013" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -686,7 +650,8 @@
     <MESSAGE value="完成登录注册的接口部分,使用django自带的form组件进行字段的限制,继承自forms.Form,并写入局部钩子函数和全局钩子函数,验证传来的数据格式的正确性,在视图类中使用checkform,只有is_valid之后,才进行后台逻辑" />
     <MESSAGE value="完成用户通过release路径POST数据时的商品发布功能,涉及商品类和商品图片类的信息的保存到数据库,以及图片的保存到服务器端的功能" />
     <MESSAGE value="完成通过/good/edit/good_id接口通过put方法传递数据,进行商品信息和商品对应图片信息的修改,如果原图被修改,原图江将被删除" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成通过/good/edit/good_id接口通过put方法传递数据,进行商品信息和商品对应图片信息的修改,如果原图被修改,原图江将被删除" />
+    <MESSAGE value="商品部分接口全部完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="商品部分接口全部完成" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -990,8 +955,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3608">
-          <caret line="178" selection-start-line="178" selection-end-line="178" />
+        <state relative-caret-position="198">
+          <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
         </state>
       </provider>
     </entry>
