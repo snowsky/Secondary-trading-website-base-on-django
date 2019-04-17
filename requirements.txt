@@ -1,3 +1,6 @@
-Django==1.11.20
 PyMySQL==0.9.3
+redis==3.2.1
+Django==1.11.20
+requests==2.21.0
+pycrypto==2.6.1
 djangorestframework==3.9.2

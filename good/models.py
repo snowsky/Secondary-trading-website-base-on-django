@@ -14,12 +14,6 @@ class Good(models.Model):
     关注商品的用户,多对多关联到用户表
     商品所属分类
     """
-    SELL_FACE_TO_FACE = 0
-    SELL_BY_DELIVERY = 1
-    SELL_ALL_OK = 2
-    # good_stat
-    sell_method_choices = ((SELL_FACE_TO_FACE, '同城当面交易'), (SELL_BY_DELIVERY, '快递'), (SELL_ALL_OK, '不限交易方式'))
-    # good_status_choices = ((0, '在售'), (1, '已售出'))
     title = models.CharField(max_length=128, verbose_name='商品标题')
     content = models.TextField(verbose_name='商品详情')
     # original_price = models.DecimalField(max_digits=8, decimal_places=2, verbose_name='原价')
@@ -33,7 +27,7 @@ class Good(models.Model):
     owner_user = models.ForeignKey(to='user.User', related_name='good_owner_user', null=True, on_delete=models.SET_NULL, db_constraint=False, verbose_name='商品发布者')
     # 加一个关注商品的用户
     star_users = models.ManyToManyField(to='user.User', related_name='good_star_users', db_constraint=False, verbose_name='关注用户')
-    category = models.ForeignKey(to='Category',null=True, on_delete=models.SET_NULL, db_constraint=False)
+    category = models.ForeignKey(to='Category', null=True, on_delete=models.SET_NULL, db_constraint=False)
     created_time = models.DateField(auto_now_add=True, null=True)
 
     class Meta:

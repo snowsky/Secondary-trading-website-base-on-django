@@ -68,9 +68,6 @@ class IdCard(models.Model):
         verbose_name_plural = verbose_name = '用户身份证验证'
 
 
-
-
-
 class ChatRecord(models.Model):
     """
     id
@@ -96,41 +93,6 @@ class ChatRecord(models.Model):
 
 
 
-class Order(models.Model):
-    """
-    订单号id
-    买家id(外键关联user表)
-    卖家id(外键关联user表)
-    金钱往来记录(关联金钱往来记录)
-    商品id
-    订单状态:付款未发货,已发货,已收货
-    订单金额
-    订单创建时间
-    """
-    bill_status_choices = ((0, '买家已付款'), (1, '卖家已收款'), (3, '买家已申请退款'), (4, '卖家已退款'))
-    order_status_choices = ((0, '卖家未发货'), (1, '卖家已发货'), (2, '买家已收货'), (3, '买家已退货'), (4, '卖家已收货'))
-    buyer = models.ForeignKey(to='User', related_name='order_buyer', null=True, on_delete=models.SET_NULL, db_constraint=False, verbose_name='买家')
-    seller = models.ForeignKey(to='User', related_name='order_seller', null=True, on_delete=models.SET_NULL, db_constraint=False, verbose_name='卖家')
-    order_status = models.PositiveIntegerField(choices=order_status_choices, default=0, verbose_name='订单状态')
-    bill_status = models.IntegerField(choices=bill_status_choices, default=0, verbose_name='钱款状态')
-    amount = models.PositiveIntegerField(null=True, verbose_name='交易金额')
-    delicery_account = models.PositiveIntegerField(null=True, verbose_name='运费')
-    delivery = models.ForeignKey(to='Delivery', null=True, on_delete=models.SET_NULL, db_constraint=False)
-    created_time = models.DateField(auto_now_add=True, verbose_name='订单生成时间')
 
-    class Meta:
-        verbose_name_plural = verbose_name = '订单详情'
-
-
-class Delivery(models.Model):
-    """
-    订单号
-    运输公司
-    """
-    delivery_id = models.BigIntegerField()
-    delivery_company = models.CharField(max_length=64)
-
-    class Meta:
-        verbose_name_plural = verbose_name = '运单'
 
 

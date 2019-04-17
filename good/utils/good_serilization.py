@@ -5,7 +5,6 @@ from good.models import Good, Category, GoodStatusAndSellMethod
 from user.models import User
 
 
-
 class GoodAndPictureSerializers(serializers.Serializer):
     '''
     SELL_FACE_TO_FACE = 0
@@ -60,6 +59,11 @@ class GoodAndPictureSerializers(serializers.Serializer):
 
     main_img = serializers.CharField()
 
+    def validate(self, attrs):
+        if attrs['original_price'] < attrs['current_price']:
+            raise ValidationError('现价不能高于原价')
+        return attrs
+
     def create(self, validated_data):
         # 偷梁换柱,把传来的外键的id转换成对象,再替换掉validated_data中对应的数据
         # 这样再保存数据就不会有问题
@@ -70,9 +74,9 @@ class GoodAndPictureSerializers(serializers.Serializer):
 
         # 转换交易方式将id转成对象
         sell_method_id = validated_data['sell_method']
-        validated_data['sell_method'] = GoodStatusAndSellMethod.objects.get(status_number=sell_method_id)
+        validated_data['sell_method'] = GoodStatusAndSellMethod.objects.get(pk=sell_method_id)
         good_status_id = validated_data['good_status']
-        validated_data['good_status'] = GoodStatusAndSellMethod.objects.get(status_number=good_status_id)
+        validated_data['good_status'] = GoodStatusAndSellMethod.objects.get(pk=good_status_id)
 
         # 转换分类标签
         category_id = validated_data['category']
@@ -108,8 +112,6 @@ class GoodSerializers(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
         model = Good
-
-
 
 # class GoodSerializers(serializers.ModelSerializer):
 #     '''
@@ -184,7 +186,3 @@ class GoodSerializers(serializers.ModelSerializer):
 #     class Meta:
 #         fields = '__all__'
 #         model = GoodPictures
-
-
-
-

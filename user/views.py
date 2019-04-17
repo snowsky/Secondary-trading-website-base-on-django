@@ -107,13 +107,18 @@ class LoginView(APIView):
 
 class RegisterView(APIView):
     def post(self, request):
+
         response = CommonResponse()
         check_form = RegisterCheckForm(request.POST)
+        print(request.POST)
+        print(check_form.is_valid())
         if check_form.is_valid():
             username = request.POST.get('username', None)
             passwd = request.POST.get('passwd', None)
             telephone = request.POST.get('telephone', None)
             code = request.POST.get('code', None)
+            print(username)
+            print(code)
 
             # email = request.POST.get('email', None)
             # email_reg = r'^[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){0,4}@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){0,4}$'
@@ -140,10 +145,11 @@ class RegisterView(APIView):
             redis_code = conn.get(telephone)
             if redis_code:
                 redis_code = str(int(redis_code))
-
+                print('code', code)
                 # 验证码匹配成功
                 if redis_code == code:
                     print('匹配成功')
+
                     try:
                         # models.User.objects.create(username=username, password=passwd, email=email, telephone=telephone)
                         models.User.objects.create(username=username, password=passwd, telephone=telephone, user_type=0)
