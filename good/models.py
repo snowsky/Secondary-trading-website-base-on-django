@@ -51,6 +51,7 @@ class GoodStatusAndSellMethod(models.Model):
 
 
 class Category(models.Model):
+    category_id = models.IntegerField(unique=True, null=True)
     name = models.CharField(unique=True, max_length=64)
 
     class Meta:

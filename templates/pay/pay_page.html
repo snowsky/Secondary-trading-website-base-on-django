@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.css">
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <span>订单金额: </span>
+        <input type="text" readonly name="money" value="{{ order_obj.order_price }}">
+{#        <span name="value">{{ order_obj.order_price }}</span>#}
+
+        <input type="submit" value="去支付" />
+    </form>
+
+
+<script></script>
+</body>
+</html>

@@ -1,20 +1,26 @@
 from django.shortcuts import render, redirect, HttpResponse
-
-from order.pay import AliPay
-import json
+from order.models import Order
+from user.utils.common_response import CommonResponse
+from order.keys.pay import AliPay
 import time
+import os
+
+BASE_DIR = os.path.dirname(__file__)
+host_url = 'www.iqer.info'
+host_url = '127.0.0.1'
+
 def ali():
     # 沙箱环境地址：https://openhome.alipay.com/platform/appDaily.htm?tab=info
     app_id = "2016092500594922"
     # 支付宝收到用户的支付,会向商户发两个请求,一个get请求,一个post请求
     # POST请求，用于最后的检测
-    notify_url = "http://www.iqer.info:80/page1/"
+    notify_url = "http://{}:80/order/page1/".format(host_url)
     # GET请求，用于页面的跳转展示
-    return_url = "http://42.56.89.12:80/page2/"
+    return_url = "http://{}:80/order/page2/".format(host_url)
     # 用户私钥
-    merchant_private_key_path = "/Users/authurchen/Desktop/salt_fish/order/keys/alipay_private_2048.txt"
+    merchant_private_key_path = os.path.join(BASE_DIR, "keys/alipay_private_2048.txt")
     # 支付宝公钥
-    alipay_public_key_path = "/Users/authurchen/Desktop/salt_fish/order/keys/alipay_public_2048.txt"
+    alipay_public_key_path = os.path.join(BASE_DIR, "keys/alipay_public_2048.txt")
     # 生成一个AliPay的对象
     alipay = AliPay(
         appid=app_id,
@@ -27,21 +33,37 @@ def ali():
     return alipay
 
 
-def page1(request):
+def page1(request, order_id):
     if request.method == "GET":
+        response = CommonResponse()
+        try:
+            order_obj = Order.objects.get(pk=order_id)
 
-        return render(request, 'pay/page1.html')
+            if order_obj:
+                return render(request, 'pay/pay_page.html', locals())
+            else:
+                return HttpResponse('订单信息获取失败')
+        except Exception as e:
+            return HttpResponse(str(e))
+
     else:
+        # print(request.POST)
+        print(order_id)
         money = float(request.POST.get('money'))
+        order_obj = Order.objects.get(pk=order_id)
         # 生成一个对象
         alipay = ali()
         # 生成支付的url
         # 对象调用direct_pay
         # 该方法生成一个加密串
         query_params = alipay.direct_pay(
-            subject="充气娃娃",  # 商品简单描述
-            out_trade_no="x2" + str(time.time()),  # 商户订单号
+            subject=order_obj.order_title,  # 商品简单描述
+            out_trade_no=order_obj.order_id,  # 商户订单号
             total_amount=money,  # 交易金额(单位: 元 保留俩位小数)
+
+            # subject="充气娃娃",  # 商品简单描述
+            # out_trade_no="x2" + str(time.time()),  # 商户订单号
+            # total_amount=money,  # 交易金额(单位: 元 保留俩位小数)
         )
 
         pay_url = "https://openapi.alipaydev.com/gateway.do?{}".format(query_params)

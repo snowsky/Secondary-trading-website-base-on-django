@@ -13,6 +13,7 @@ from user.utils.user_drf_auth import UserTokenAuth
 from salt_fish.settings import GOOD_IMAGE_DIR
 from good.models import GoodPictures, Category, Good, GoodStatusAndSellMethod
 from good.utils.good_serilization import GoodAndPictureSerializers, GoodSerializers
+from order.utils.order_ser import OrderSerializer
 
 # 定义服务器地址 测试使用本地地址
 ip = '127.0.0.1'
@@ -179,9 +180,11 @@ class GoodEdit(APIView):
 
     # 定义一个get函数,用来返回要编辑的商品的当前信息 (已完成)
     def get(self, request, good_id):
+        print('jin')
         response = CommonResponse()
         try:
             good_obj = Good.objects.get(pk=good_id)
+            print(good_obj)
             if request.user_id == good_obj.owner_user.id:
                 good_ser = GoodSerializers(instance=good_obj)
                 # print(good_ser.data)
@@ -289,10 +292,10 @@ class GoodEdit(APIView):
                             # 图片保存成功后要保存进数据库了
                             main_img = request.data.get('main_img')
                             if image == main_img:
-                                GoodPictures.objects.filter(pk=image).update(image_path=file_path, is_main_pic=1,
+                                GoodPictures.objects.filter(pk=image).update_or_create(image_path=file_path, is_main_pic=1,
                                                                              good=good_obj.first())
                             else:
-                                GoodPictures.objects.filter(pk=image).update(image_path=file_path, is_main_pic=0,
+                                GoodPictures.objects.filter(pk=image).update_or_create(image_path=file_path, is_main_pic=0,
                                                                              good=good_obj.first())
                     response.status = 200
                     response.msg = '商品信息接收成功'
@@ -349,3 +352,6 @@ class GetPicById(View):
         except Exception as e:
             print(e)
             return HttpResponse(str(e))
+
+
+

@@ -1658,7 +1658,6 @@ user_id</ColNames>
     <column id="391" parent="263" name="bill_status_id">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="392" parent="263" name="buyer_id">
@@ -1676,420 +1675,456 @@ user_id</ColNames>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="395" parent="263" name="order_id">
+    <column id="395" parent="263" name="order_status_id">
+      <Position>11</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="396" parent="263" name="seller_id">
+      <Position>12</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="397" parent="263" name="order_id">
       <ColNames>order_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="396" parent="263" name="order_order_bill_status_id_11a1e214_fk_order_ord">
+    <index id="398" parent="263" name="order_order_bill_status_id_11a1e214_fk_order_ord">
       <ColNames>bill_status_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="397" parent="263" name="PRIMARY">
+    <index id="399" parent="263" name="order_order_buyer_id_dadf595a">
+      <ColNames>buyer_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="400" parent="263" name="order_order_delivery_id_9cbb9abf">
+      <ColNames>delivery_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="401" parent="263" name="order_order_good_id_98490151">
+      <ColNames>good_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="402" parent="263" name="order_order_order_status_id_12616e9a_fk_order_ord">
+      <ColNames>order_status_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="403" parent="263" name="order_order_seller_id_003495e4">
+      <ColNames>seller_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="404" parent="263" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="398" parent="263" name="order_id">
+    <key id="405" parent="263" name="order_id">
       <ColNames>order_id</ColNames>
       <UnderlyingIndexName>order_id</UnderlyingIndexName>
     </key>
-    <foreign-key id="399" parent="263" name="order_order_bill_status_id_11a1e214_fk_order_ord">
+    <foreign-key id="406" parent="263" name="order_order_bill_status_id_11a1e214_fk_order_ord">
       <ColNames>bill_status_id</ColNames>
       <RefSchemaName>salt_fish</RefSchemaName>
       <RefTableName>order_orderstatusandbillstatus</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="400" parent="264" name="id">
+    <foreign-key id="407" parent="263" name="order_order_order_status_id_12616e9a_fk_order_ord">
+      <ColNames>order_status_id</ColNames>
+      <RefSchemaName>salt_fish</RefSchemaName>
+      <RefTableName>order_orderstatusandbillstatus</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="408" parent="264" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="401" parent="264" name="status_number">
+    <column id="409" parent="264" name="status_number">
       <Position>2</Position>
       <DataType>smallint(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="402" parent="264" name="status_content">
+    <column id="410" parent="264" name="status_content">
       <Position>3</Position>
       <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="403" parent="264" name="status_number">
+    <index id="411" parent="264" name="status_number">
       <ColNames>status_number</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="404" parent="264" name="status_content">
+    <index id="412" parent="264" name="status_content">
       <ColNames>status_content</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="405" parent="264" name="PRIMARY">
+    <key id="413" parent="264" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="406" parent="264" name="status_number">
+    <key id="414" parent="264" name="status_number">
       <ColNames>status_number</ColNames>
       <UnderlyingIndexName>status_number</UnderlyingIndexName>
     </key>
-    <key id="407" parent="264" name="status_content">
+    <key id="415" parent="264" name="status_content">
       <ColNames>status_content</ColNames>
       <UnderlyingIndexName>status_content</UnderlyingIndexName>
     </key>
-    <column id="408" parent="265" name="id">
+    <column id="416" parent="265" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="409" parent="265" name="created_time">
+    <column id="417" parent="265" name="created_time">
       <Position>2</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="410" parent="265" name="content">
+    <column id="418" parent="265" name="content">
       <Position>3</Position>
       <DataType>longtext|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="411" parent="265" name="good_id">
+    <column id="419" parent="265" name="good_id">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="412" parent="265" name="receiver_id">
+    <column id="420" parent="265" name="receiver_id">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="413" parent="265" name="sender_id">
+    <column id="421" parent="265" name="sender_id">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="414" parent="265" name="receiver_id">
+    <index id="422" parent="265" name="receiver_id">
       <ColNames>receiver_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="415" parent="265" name="sender_id">
+    <index id="423" parent="265" name="sender_id">
       <ColNames>sender_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="416" parent="265" name="user_chatrecord_good_id_b6035fb5">
+    <index id="424" parent="265" name="user_chatrecord_good_id_b6035fb5">
       <ColNames>good_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="417" parent="265" name="PRIMARY">
+    <key id="425" parent="265" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="418" parent="265" name="receiver_id">
+    <key id="426" parent="265" name="receiver_id">
       <ColNames>receiver_id</ColNames>
       <UnderlyingIndexName>receiver_id</UnderlyingIndexName>
     </key>
-    <key id="419" parent="265" name="sender_id">
+    <key id="427" parent="265" name="sender_id">
       <ColNames>sender_id</ColNames>
       <UnderlyingIndexName>sender_id</UnderlyingIndexName>
     </key>
-    <column id="420" parent="266" name="id">
+    <column id="428" parent="266" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="421" parent="266" name="id_card_number">
+    <column id="429" parent="266" name="id_card_number">
       <Position>2</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="422" parent="266" name="id_card_pic">
+    <column id="430" parent="266" name="id_card_pic">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="423" parent="266" name="user_id">
+    <column id="431" parent="266" name="user_id">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="424" parent="266" name="user_idcard_user_id_819eb015">
+    <index id="432" parent="266" name="user_idcard_user_id_819eb015">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="425" parent="266" name="PRIMARY">
+    <key id="433" parent="266" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="426" parent="267" name="id">
+    <column id="434" parent="267" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="427" parent="267" name="password">
+    <column id="435" parent="267" name="password">
       <Position>2</Position>
       <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="428" parent="267" name="last_login">
+    <column id="436" parent="267" name="last_login">
       <Position>3</Position>
       <DataType>datetime(6)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="429" parent="267" name="is_superuser">
+    <column id="437" parent="267" name="is_superuser">
       <Position>4</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="430" parent="267" name="first_name">
+    <column id="438" parent="267" name="first_name">
       <Position>5</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="431" parent="267" name="last_name">
+    <column id="439" parent="267" name="last_name">
       <Position>6</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="432" parent="267" name="is_staff">
+    <column id="440" parent="267" name="is_staff">
       <Position>7</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="433" parent="267" name="is_active">
+    <column id="441" parent="267" name="is_active">
       <Position>8</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="434" parent="267" name="date_joined">
+    <column id="442" parent="267" name="date_joined">
       <Position>9</Position>
       <DataType>datetime(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="435" parent="267" name="username">
+    <column id="443" parent="267" name="username">
       <Position>10</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="436" parent="267" name="email">
+    <column id="444" parent="267" name="email">
       <Position>11</Position>
       <DataType>varchar(254)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="437" parent="267" name="telephone">
+    <column id="445" parent="267" name="telephone">
       <Position>12</Position>
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="438" parent="267" name="telephone_status">
+    <column id="446" parent="267" name="telephone_status">
       <Position>13</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="439" parent="267" name="created_time">
+    <column id="447" parent="267" name="created_time">
       <Position>14</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="440" parent="267" name="balance">
+    <column id="448" parent="267" name="balance">
       <Position>15</Position>
       <DataType>decimal(10,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="441" parent="267" name="user_type">
+    <column id="449" parent="267" name="user_type">
       <Position>16</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="442" parent="267" name="username">
+    <index id="450" parent="267" name="username">
       <ColNames>username</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="443" parent="267" name="telephone">
+    <index id="451" parent="267" name="telephone">
       <ColNames>telephone</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="444" parent="267" name="PRIMARY">
+    <key id="452" parent="267" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="445" parent="267" name="username">
+    <key id="453" parent="267" name="username">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>username</UnderlyingIndexName>
     </key>
-    <key id="446" parent="267" name="telephone">
+    <key id="454" parent="267" name="telephone">
       <ColNames>telephone</ColNames>
       <UnderlyingIndexName>telephone</UnderlyingIndexName>
     </key>
-    <column id="447" parent="268" name="id">
+    <column id="455" parent="268" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="448" parent="268" name="user_id">
+    <column id="456" parent="268" name="user_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="449" parent="268" name="group_id">
+    <column id="457" parent="268" name="group_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="450" parent="268" name="user_user_groups_user_id_group_id_bb60391f_uniq">
+    <index id="458" parent="268" name="user_user_groups_user_id_group_id_bb60391f_uniq">
       <ColNames>user_id
 group_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="451" parent="268" name="user_user_groups_group_id_c57f13c0_fk_auth_group_id">
+    <index id="459" parent="268" name="user_user_groups_group_id_c57f13c0_fk_auth_group_id">
       <ColNames>group_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="452" parent="268" name="PRIMARY">
+    <key id="460" parent="268" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="453" parent="268" name="user_user_groups_user_id_group_id_bb60391f_uniq">
+    <key id="461" parent="268" name="user_user_groups_user_id_group_id_bb60391f_uniq">
       <ColNames>user_id
 group_id</ColNames>
       <UnderlyingIndexName>user_user_groups_user_id_group_id_bb60391f_uniq</UnderlyingIndexName>
     </key>
-    <foreign-key id="454" parent="268" name="user_user_groups_user_id_13f9a20d_fk_user_user_id">
+    <foreign-key id="462" parent="268" name="user_user_groups_user_id_13f9a20d_fk_user_user_id">
       <ColNames>user_id</ColNames>
       <RefSchemaName>salt_fish</RefSchemaName>
       <RefTableName>user_user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="455" parent="268" name="user_user_groups_group_id_c57f13c0_fk_auth_group_id">
+    <foreign-key id="463" parent="268" name="user_user_groups_group_id_c57f13c0_fk_auth_group_id">
       <ColNames>group_id</ColNames>
       <RefSchemaName>salt_fish</RefSchemaName>
       <RefTableName>auth_group</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="456" parent="269" name="id">
+    <column id="464" parent="269" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="457" parent="269" name="user_id">
+    <column id="465" parent="269" name="user_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="458" parent="269" name="permission_id">
+    <column id="466" parent="269" name="permission_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="459" parent="269" name="user_user_user_permissions_user_id_permission_id_64f4d5b8_uniq">
+    <index id="467" parent="269" name="user_user_user_permissions_user_id_permission_id_64f4d5b8_uniq">
       <ColNames>user_id
 permission_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="460" parent="269" name="user_user_user_permi_permission_id_ce49d4de_fk_auth_perm">
+    <index id="468" parent="269" name="user_user_user_permi_permission_id_ce49d4de_fk_auth_perm">
       <ColNames>permission_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="461" parent="269" name="PRIMARY">
+    <key id="469" parent="269" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="462" parent="269" name="user_user_user_permissions_user_id_permission_id_64f4d5b8_uniq">
+    <key id="470" parent="269" name="user_user_user_permissions_user_id_permission_id_64f4d5b8_uniq">
       <ColNames>user_id
 permission_id</ColNames>
       <UnderlyingIndexName>user_user_user_permissions_user_id_permission_id_64f4d5b8_uniq</UnderlyingIndexName>
     </key>
-    <foreign-key id="463" parent="269" name="user_user_user_permissions_user_id_31782f58_fk_user_user_id">
+    <foreign-key id="471" parent="269" name="user_user_user_permissions_user_id_31782f58_fk_user_user_id">
       <ColNames>user_id</ColNames>
       <RefSchemaName>salt_fish</RefSchemaName>
       <RefTableName>user_user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="464" parent="269" name="user_user_user_permi_permission_id_ce49d4de_fk_auth_perm">
+    <foreign-key id="472" parent="269" name="user_user_user_permi_permission_id_ce49d4de_fk_auth_perm">
       <ColNames>permission_id</ColNames>
       <RefSchemaName>salt_fish</RefSchemaName>
       <RefTableName>auth_permission</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="465" parent="270" name="id">
+    <column id="473" parent="270" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="466" parent="270" name="receiver_name">
+    <column id="474" parent="270" name="receiver_name">
       <Position>2</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="467" parent="270" name="receiver_telephone">
+    <column id="475" parent="270" name="receiver_telephone">
       <Position>3</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="468" parent="270" name="receiver_address">
+    <column id="476" parent="270" name="receiver_address">
       <Position>4</Position>
       <DataType>longtext|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="469" parent="270" name="user_id">
+    <column id="477" parent="270" name="user_id">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="470" parent="270" name="user_useraddress_user_id_c23aded4">
+    <index id="478" parent="270" name="user_useraddress_user_id_c23aded4">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="471" parent="270" name="PRIMARY">
+    <key id="479" parent="270" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
