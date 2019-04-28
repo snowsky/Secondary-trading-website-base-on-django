@@ -542,6 +542,7 @@
                     data: {
                         username: $('#user').val(),
                         passwd: $('#passwd').val(),
+                        confirm_passwd: $('#confirm-passwd').val(),
                         telephone: $('#telephone').val(),
                         code: $('#code').val(),
                         {#email: $('#email').val(),#}
@@ -585,9 +586,13 @@
                     passwd: $('#passwd').val(),
                 }, success: function (res) {
                     console.log(res)
+                    var token = res['data']['salt_cookie']
                     {#console.log(data)#}
                     {#console.log(data['msg'])#}
                     if (res['status'] == 200) {
+                        {#var cookie = "token=" + token + ";path=/; domain=.iqer.info";#}
+                        var cookie = "token=" + token + ";path=/;";
+                        document.cookie = cookie;
                         $('.modal-body').text('登录成功,将跳转首页')
                         $('#myModal').modal('show')
                         setTimeout("window.location.href='/index/'", 2000)

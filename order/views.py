@@ -1,20 +1,24 @@
 from django.shortcuts import render, redirect, HttpResponse
-from order.models import Order
+from order.models import Order, OrderStatusAndBillStatus
 from user.utils.common_response import CommonResponse
 from order.keys.pay import AliPay
 import time
+from rest_framework.response import Response
 import os
+import redis
+from user.utils.my_redis_tool import POOL
+from django.views.decorators.csrf import csrf_exempt
 
 BASE_DIR = os.path.dirname(__file__)
 host_url = 'www.iqer.info'
-host_url = '127.0.0.1'
+# host_url = '127.0.0.1'
 
 def ali():
     # 沙箱环境地址：https://openhome.alipay.com/platform/appDaily.htm?tab=info
-    app_id = "2016092500594922"
+    app_id = "写上你的支付宝appid"
     # 支付宝收到用户的支付,会向商户发两个请求,一个get请求,一个post请求
     # POST请求，用于最后的检测
-    notify_url = "http://{}:80/order/page1/".format(host_url)
+    notify_url = "http://{}:80/order/page2/".format(host_url)
     # GET请求，用于页面的跳转展示
     return_url = "http://{}:80/order/page2/".format(host_url)
     # 用户私钥
@@ -35,14 +39,31 @@ def ali():
 
 def page1(request, order_id):
     if request.method == "GET":
-        response = CommonResponse()
         try:
-            order_obj = Order.objects.get(pk=order_id)
+            token = request.token
+            print(token)
+            conn = redis.Redis(connection_pool=POOL)
+            keys = conn.keys()
+            # 二进制数据转字符串
+            keys = [str(key, encoding='utf-8') for key in keys]
 
-            if order_obj:
-                return render(request, 'pay/pay_page.html', locals())
+            if token in keys:
+                user_id = conn.get(token)
+                user_id = str(user_id, encoding='utf-8')
+                # print(user_id)
+
+                order_obj = Order.objects.get(pk=order_id)  # type:Order
+
+                if order_obj:
+                    if str(order_obj.buyer_id) == user_id:
+                        return render(request, 'pay/pay_page.html', locals())
+                    else:
+                        return HttpResponse('你不能购买自己的商品')
+
+                else:
+                    return HttpResponse('订单信息获取失败')
             else:
-                return HttpResponse('订单信息获取失败')
+                return HttpResponse('请先登录')
         except Exception as e:
             return HttpResponse(str(e))
 
@@ -74,10 +95,12 @@ def page1(request, order_id):
         return redirect(pay_url)
 
 
+@csrf_exempt
 def page2(request):
     # 支付宝如果收到用户的支付,支付宝会给我的地址发一个post请求,一个get请求
     alipay = ali()
     if request.method == "POST":
+        print('支付宝回调,post请求======================')
         # 检测是否支付成功
         # 去请求体中获取所有返回的数据：状态/订单号
         from urllib.parse import parse_qs
@@ -98,12 +121,23 @@ def page2(request):
         print('POST验证', status)
         if status:
             # 修改自己订单状态
+            print(request.POST.get('out_trade_no'), 'my_out_trade_no')
+            # print('返回的订单号是:{}'.format(request.POST.get('')))
             pass
         return HttpResponse('POST返回')
 
     else:
-        params = request.GET
+        # params = request.GET
+        print('支付宝回调,get请求============')
+        params = request.GET.copy()
         sign = params.pop('sign', None)
         status = alipay.verify(params, sign)
         print('GET验证', status)
+        if status:
+            order_id = request.GET.get('out_trade_no')
+            print(order_id,'order_id')
+            order_obj = Order.objects.get(order_id=order_id)
+            pay_status = OrderStatusAndBillStatus.objects.get(status_content='买家已付款')
+            order_obj.bill_status = pay_status
+            order_obj.save()
         return HttpResponse('支付成功')

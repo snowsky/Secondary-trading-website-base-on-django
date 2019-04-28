@@ -24,7 +24,7 @@ SECRET_KEY = 'wf+4!q*&h5s0+0f0ww*qq^c()+k!los=_8ey7#7!f9#l701gbf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 AUTH_USER_MODEL = 'user.User'
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'haystack',
     'user.apps.UserConfig',
     'good.apps.GoodConfig',
     'order.apps.OrderConfig'
@@ -84,8 +85,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'salt_fish',
         'HOST': '127.0.0.1',
+        # 'HOST': '67.230.163.74',
         "USER": 'root',
-        'PASSWORD': 'root'
+        'PASSWORD': 'root',
+        # 'PASSWORD': 'Cqh,19920718'
     }
 }
 
@@ -141,3 +144,19 @@ GOOD_IMAGE_DIR = os.path.join(BASE_DIR, 'good', 'images')
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'good', 'images')
+
+
+#需要设置PATH到你的Whoosh索引的文件系统位置
+import os
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
+    },
+}
+
+# 自动更新索引
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
+# 为了让dwebsocket支持uwsgi
+# WEBSOCKET_FACTORY_CLASS = 'dwebsocket.backends.uwsgi.factory.uWsgiWebSocketFactory'

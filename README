@@ -1,6 +1,46 @@
 response请求状态规范
 response = {'status': XXX, 'msg': 'text_content', 'data': 'data_content'}
 
+api接口:
+4.22
+/register/ 注册
+/login/ 登录
+/api/good_release/ 商品发布
+/api/good/good_id/ 查看单商品信息
+/api/good_edit/good_id/ 获取已发布商品,编辑/删除已发布商品的信息
+/api/pic/pic_id/ 获取图片的数据
+/api/all_order/bill_status/ 获取可用的所有订单状态
+/api/buy/good_id/ 商品购买接口
+/api/buy_order/ 由分页器处理后返回用户买下的订单数据
+/api/sell_order/ 由分页器处理后返回用户卖出的订单数据
+/api/add_address/ 已注册用户为自己添加收货地址相关信息
+/api/edit_order/(order_id)/ 供用户删除已存在的订单(不删除数据,只是修改状态不显示)
+
+4.23
+/order/pay/order_id/  携带token对该地址发送get请求返回订单对应的金额及支付按钮页面
+/api/seller_send_delivery/order_id/ 卖家在买家付款后的发货接口
+/api/buyer_receive_delivery/order_id/ ,买家在卖家发货之后,进行收货的接口
+/api/buyer_motion_drawback/order_id 买家收货且卖家收款后,买家申请退货的接口
+/api/buyer_send_drawback/order_id/ 买家申请退款成功后,进行退货发货生成退货运单的操作接口
+/api/seller_receive_drawback/order_id/ 买家将货物发回后,卖家确认收货并退款给买家的接口
+
+4.24
+内部流程
+用户发布商品后,celery对商品内容做校验,对图片做校验,如果校验失败,则审核失败,校验成功则发布成功
+good.utils.content_verify.py
+good.utils.pic_verify.py
+celery_task.py
+
+4.25
+celery_verify_task.add_celery_task.add_good_verify_celery_task(good_id) 根据用户上传商品带来信息生成数据
+,携带good_id校验商品文字和商品的图片是否含敏感信息
+celery_verify_task.celery.py  两个任务的设置,第一个发出校验申请,第二个校验第一个申请任务是否已经执行完成
+/api/verify/good/good_id  纯测试接口,只需get在url中传商品id,返回商品的审核结果
+/test/    商品标题和内容全文检索接口
+
+4.26
+good.utils.salt_fish_spider.py 爬取闲鱼上的数据
+
 status:
 100 请求正确,无数据返回
 101 请求正确,请求数据异常,疑似被攻击
@@ -70,16 +110,3 @@ msg:
 (9, '买家已退货')
 (10, '卖家已收货'))
 
-
-# /login
-get 获取登录页面
-
-post 携带用户数据
-登录时携带token,telephone, passwd,先验证token,没有token再进行用户名和账号验证
-
-# /good/release
-get 获取商品发布的页面,携带cookie中的token即可, 没有带token的,先去/login进行post用户信息登录
-返回当前所有的分类,Category
-和所有的商品交易方式和状态,GoodStatusAndSellMethod
-
-post

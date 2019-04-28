@@ -318,3 +318,11 @@
 #         except Exception as e:
 #             print(e)
 #             return HttpResponse(str(e))
+from django.shortcuts import render
+from good.models import Good
+def test(request):
+    good_list = Good.objects.all()
+    for g in good_list:
+        print(g)
+
+    return render(request, 'my_test.html', locals())

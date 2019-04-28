@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        span.highlighted {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+{% load highlight %}
+{% if query %}
+    <h3>搜索结果如下：</h3>
+    {% for result in page.object_list %}
+{#        <a href="/{{ result.object.id }}/">{{ result.object.title }}</a><br/>#}
+{#        <img src="{{ result.object. }}" alt="">#}
+        <a href="{% url 'get_good_by_id' result.object.id %}">{%   highlight result.object.title with query max_length 2%}</a><br/>
+        <p>{{ result.object.content|safe }}</p>
+        <p>{% highlight result.content with query %}</p>
+    {% empty %}
+        <p>啥也没找到</p>
+    {% endfor %}
+
+    {% if page.has_previous or page.has_next %}
+        <div>
+            {% if page.has_previous %}
+                <a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; 上一页
+            {% if page.has_previous %}</a>{% endif %}
+            |
+            {% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}下一页 &raquo;
+            {% if page.has_next %}</a>{% endif %}
+        </div>
+    {% endif %}
+{% endif %}
+</body>
+</html>

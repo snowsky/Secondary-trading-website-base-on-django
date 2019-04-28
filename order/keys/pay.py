@@ -98,7 +98,7 @@ class AliPay(object):
         signer = PKCS1_v1_5.new(key)
         digest = SHA256.new()
         digest.update(raw_content.encode("utf8"))
-        if signer.verify(digest, decodebytes(signature.encode("utf8"))):
+        if signer.verify(digest, decodebytes(signature[0].encode("utf8"))):
             return True
         return False
 

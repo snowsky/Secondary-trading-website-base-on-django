@@ -25,7 +25,7 @@ class User(AbstractUser):
     telephone = models.BigIntegerField(unique=True, verbose_name='手机号', null=True)
     telephone_status = models.PositiveIntegerField(choices=tel_choices, default=0)
     created_time = models.DateField(auto_now_add=True, verbose_name='用户注册日期')
-    balance = models.DecimalField(default=0.0, max_digits=10, decimal_places=2, verbose_name='余额')
+    balance = models.FloatField(default=0.0, verbose_name='余额')
     user_type = models.IntegerField(choices=type_choices, default=2, verbose_name='用户类型')
 
     class Meta:
@@ -81,8 +81,8 @@ class ChatRecord(models.Model):
     消息时间
     """
     good = models.ForeignKey(to='good.Good', null=True, on_delete=models.SET_NULL, db_constraint=False, verbose_name='聊天相关商品')
-    sender = models.OneToOneField(to='User', related_name='chat_sender', null=True, on_delete=models.SET_NULL, db_constraint=False, verbose_name='发送方')
-    receiver = models.OneToOneField(to='User', related_name='chat_receiver', null=True, on_delete=models.SET_NULL, db_constraint=False, verbose_name='接收方')
+    sender = models.ForeignKey(to='User', related_name='chat_sender', null=True, on_delete=models.SET_NULL, db_constraint=False, verbose_name='发送方')
+    receiver = models.ForeignKey(to='User', related_name='chat_receiver', null=True, on_delete=models.SET_NULL, db_constraint=False, verbose_name='接收方')
     created_time = models.DateField(auto_now_add=True, verbose_name='聊天时间')
     content = models.TextField(verbose_name='聊天内容')
 

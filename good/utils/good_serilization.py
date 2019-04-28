@@ -36,7 +36,7 @@ class GoodAndPictureSerializers(serializers.Serializer):
     original_price = serializers.FloatField(min_value=0.1, error_messages={'min_value': '价格不能为负数'})
     current_price = serializers.FloatField(min_value=0.1, error_messages={'min_value': '价格不能为负数'})
     sell_method = serializers.IntegerField()
-    good_status = serializers.IntegerField()
+    good_status = serializers.IntegerField(required=False)
     owner_user = serializers.IntegerField()
     category = serializers.IntegerField()
     # 商品照片Picture的字段
@@ -75,8 +75,8 @@ class GoodAndPictureSerializers(serializers.Serializer):
         # 转换交易方式将id转成对象
         sell_method_id = validated_data['sell_method']
         validated_data['sell_method'] = GoodStatusAndSellMethod.objects.get(pk=sell_method_id)
-        good_status_id = validated_data['good_status']
-        validated_data['good_status'] = GoodStatusAndSellMethod.objects.get(pk=good_status_id)
+        # good_status_id = validated_data['good_status']
+        # validated_data['good_status'] = GoodStatusAndSellMethod.objects.get(pk=good_status_id)
 
         # 转换分类标签
         category_id = validated_data['category']

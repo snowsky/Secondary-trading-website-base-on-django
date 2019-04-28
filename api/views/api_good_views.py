@@ -1,7 +1,7 @@
 import os
 import hashlib
 import time
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import HttpResponse
 from django.views import View
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -13,13 +13,14 @@ from user.utils.user_drf_auth import UserTokenAuth
 from salt_fish.settings import GOOD_IMAGE_DIR
 from good.models import GoodPictures, Category, Good, GoodStatusAndSellMethod
 from good.utils.good_serilization import GoodAndPictureSerializers, GoodSerializers
-from order.utils.order_ser import OrderSerializer
+from user.models import User
 
 # 定义服务器地址 测试使用本地地址
-ip = '127.0.0.1'
+# ip = '127.0.0.1'
+ip = '67.230.163.74'
 
 # 用于拼接图片的路径
-base_url = 'http://{}:8001/api/'.format(ip)
+base_url = 'http://{}/api/'.format(ip)
 
 
 # 用于其他用于查看单个商品详情信息使用,返回一个商品现有的信息(GET)
@@ -29,6 +30,12 @@ class GetGoodById(APIView):
         response = CommonResponse()
         try:
             good_obj = Good.objects.get(pk=good_id)
+
+            good_buy_status = GoodStatusAndSellMethod.objects.get(status_content='已发布')
+            if good_obj.good_status != good_buy_status:
+                response.msg = '当前商品无法查看及购买'
+                return Response(response.get_dic())
+
             good_ser = GoodSerializers(instance=good_obj)
             # if good_ser.is_valid():
             response.data = {**good_ser.data}
@@ -113,12 +120,22 @@ class GoodRelease(APIView):
         '''
         # 先创建一个简单的回复对象,方便后续往里面放数据
         response = CommonResponse()
+        user_id = request.user_id
+        user_obj = User.objects.get(pk=user_id)
+        print(user_obj.user_type)
+        print(str(user_obj.user_type) == '2')
+        if str(user_obj.user_type) == '2':
+            response.msg = '当前用户已冻结,无法发帖,请联系管理员解封'
+            print(response.msg)
+            return Response(response.get_dic())
+
         try:
             # 尝试序列化组件
             good_ser = GoodAndPictureSerializers(data=request.POST)
             # 数据经序列化组件之后数据格式没问题的情况
             if good_ser.is_valid():
                 # 经过序列化之后商品信息已经保存进数据库,并且通过django的model层返回了商品对象
+
                 good_obj = good_ser.save()
                 # 开始保存对应的图片类
                 # print(request.data['image'])
@@ -131,13 +148,15 @@ class GoodRelease(APIView):
                     # 所有文件都存在request.FILES中,每次循环获取一个对象
                     image_obj = request.FILES.get(image)
                     if image_obj and image_obj.size > 1 and image_obj.size < 20480000:
+                        print('照片的size:{}|,================================='.format(image_obj.size))
                         # print(GOOD_IMAGE_DIR)
                         # 需要修改文件名,确保图片文件名的不重复
                         # 先取出文件后缀保留,之后还需要拼接回文件名中进行保存
                         pic_back_end = image_obj.name.split('.')[-1]
                         # 将文件名进行md5值+上传时间+用户id之后再加密
                         image_name_md5 = hashlib.md5()
-                        name_bytes = '{}{}{}'.format(image_obj.name, time.time(), good_obj.owner_user.id).encode('utf-8')
+                        name_bytes = '{}{}{}'.format(image_obj.name, time.time(), good_obj.owner_user.id).encode(
+                            'utf-8')
                         image_name_md5.update(name_bytes)
                         # 使用md5的摘要值作为新的图片名
                         new_image = image_name_md5.hexdigest()
@@ -157,6 +176,13 @@ class GoodRelease(APIView):
                             GoodPictures.objects.create(image_path=file_path, is_main_pic=1, good=good_obj)
                         else:
                             GoodPictures.objects.create(image_path=file_path, is_main_pic=0, good=good_obj)
+
+                # 数据库保存成功后,要做校验商品的功能了
+                # 扔一个good_id给celery校验任务
+                from celery_verify_task.add_celery_task import add_good_verify_celery_task
+
+                add_good_verify_celery_task(good_id=good_obj.id)
+
                 response.status = 200
                 response.msg = '商品信息接收成功'
 
@@ -235,9 +261,10 @@ class GoodEdit(APIView):
         # 尝试序列化组件
         try:
             good_obj = Good.objects.filter(pk=good_id)
+            g_o = good_obj.first()  # type:Good
 
-            g_o = good_obj.first()
             if request.user_id == g_o.owner_user.id:
+                print('是本人操作')
                 good_ser = GoodAndPictureSerializers(instance=good_obj, data=request.data)
                 # 数据经序列化组件之后数据格式没问题的情况
                 if good_ser.is_valid():
@@ -281,7 +308,7 @@ class GoodEdit(APIView):
                             # 使用文件路径保存文件
                             path = default_storage.save(file_path, ContentFile(image_obj.read()))
                             # tmp_file = os.path.join(settings.MEDIA_ROOT, path)
-
+                            main_img = request.data.get('main_img')
                             # 删除原图片id路径的图片
                             modify_pic_obj = GoodPictures.objects.filter(pk=image).first()
                             if modify_pic_obj:
@@ -289,14 +316,22 @@ class GoodEdit(APIView):
                                 print(remove_path)
                                 os.remove(remove_path)
                                 print('原图片删除成功')
-                            # 图片保存成功后要保存进数据库了
-                            main_img = request.data.get('main_img')
-                            if image == main_img:
-                                GoodPictures.objects.filter(pk=image).update_or_create(image_path=file_path, is_main_pic=1,
-                                                                             good=good_obj.first())
+                                # 图片保存成功后要保存进数据库了
+
+                                if image == main_img:
+                                    GoodPictures.objects.filter(pk=image).update(image_path=file_path, is_main_pic=1,
+                                                                                 good=good_obj.first())
+                                else:
+                                    GoodPictures.objects.filter(pk=image).update(image_path=file_path, is_main_pic=0,
+                                                                                 good=good_obj.first())
                             else:
-                                GoodPictures.objects.filter(pk=image).update_or_create(image_path=file_path, is_main_pic=0,
-                                                                             good=good_obj.first())
+                                if image == main_img:
+                                    GoodPictures.objects.create(image_path=file_path, is_main_pic=1,
+                                                                good=good_obj.first())
+                                else:
+                                    GoodPictures.objects.create(image_path=file_path, is_main_pic=0,
+                                                                good=good_obj.first())
+
                     response.status = 200
                     response.msg = '商品信息接收成功'
                     # 序列化组件类的
@@ -352,6 +387,3 @@ class GetPicById(View):
         except Exception as e:
             print(e)
             return HttpResponse(str(e))
-
-
-

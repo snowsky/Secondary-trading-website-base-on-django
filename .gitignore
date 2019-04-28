@@ -1,0 +1,11 @@
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+*.jpg
+*.zip
+*.conf
+*.ini
+order/keys/*.txt
+dist
+build

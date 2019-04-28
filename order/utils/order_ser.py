@@ -1,8 +1,8 @@
+from datetime import datetime
 from rest_framework import serializers
 from good.models import Good
-from user.models import User
 from order.models import OrderStatusAndBillStatus, Order
-from datetime import datetime
+from user.models import User
 
 
 class SaveOrderSerializer(serializers.Serializer):
@@ -26,7 +26,7 @@ class SaveOrderSerializer(serializers.Serializer):
     seller = serializers.IntegerField()
     order_status = serializers.IntegerField()
     bill_status = serializers.IntegerField()
-    delivery_price = serializers.FloatField(min_value=0.01, error_messages={'min_value': '运费应为正数'})
+    delivery_price = serializers.FloatField(min_value=0.00, error_messages={'min_value': '运费应为正数'})
     order_price = serializers.FloatField(min_value=0.01, error_messages={'min_value': '订单价格应为正数'})
     delivery = serializers.IntegerField(required=False)
     created_time = serializers.DateField(required=False)
@@ -39,6 +39,9 @@ class SaveOrderSerializer(serializers.Serializer):
     def create(self, validated_data):
 
         good_obj = Good.objects.get(pk=validated_data['good'])
+        # good_sell_status = GoodStatusAndSellMethod.objects.get(status_content='交易中')
+        # if good_obj.good_status != good_sell_status:
+        #     raise ValidationError('该商品已无法购买')
         validated_data['good'] = good_obj
         import uuid
         t = datetime.now()

@@ -2,40 +2,65 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9624fa3b-3b3f-465a-8cbb-4235894d7153" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.python-version" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/views/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/views/api_order_views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/add_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/good/images/03abf05801c72699223e2b36bc205d7a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/good/images/26890c2dde85299cb3716152bce22bb3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/good/images/5133bcddec3c8b950221e1797b59d12a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/good/images/80cb088a6f59e8be7dca2b3380dda536.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/good/migrations/0003_category_category_id.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/keys/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/migrations/0002_auto_20190418_1608.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/migrations/0003_order_is_show.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/migrations/0004_order_order_owner.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/migrations/0005_remove_order_order_owner.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/migrations/0006_auto_20190418_1956.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/utils/order_ser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pay/pay_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e59781c2-2a60-4f7f-89a3-cd63efc4ac78.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e59781c2-2a60-4f7f-89a3-cd63efc4ac78.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChineseAnalyzer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/views/api_user_views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/views/api_verify_views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/celery_verify_task/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/celery_verify_task/add_celery_task.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/celery_verify_task/celery.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/celery_verify_task/celery_result_task.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/celery_verify_task/content_verify.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/celery_verify_task/good_celery_task.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/celery_verify_task/pic_verify.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/good/search_indexes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/good/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/my_test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/search/indexes/good/good_text.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/search/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/web_cheat.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/migrations/0003_auto_20190426_2046.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/utils/user_address_ser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views/api_good_views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/good/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/good/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/good/migrations/0002_auto_20190417_1442.py" beforeDir="false" afterPath="$PROJECT_DIR$/good/migrations/0002_auto_20190418_1608.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/api_good_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views/api_good_views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/api_order_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views/api_order_views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/add_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/add_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/good/images/03abf05801c72699223e2b36bc205d7a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/good/images/26890c2dde85299cb3716152bce22bb3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/good/images/2cc391d3b2545ad1087dbc74977761ea.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/good/images/3e4218886c36e64a1297d4a200ff187b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/good/images/41a0c093aa8e84e01a30a18416e8672f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/good/images/4c010cbc725edd4ae03459ac49d7421c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/good/images/4dbb7e876d52da6098fa500e1466a153.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/good/images/5133bcddec3c8b950221e1797b59d12a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/good/images/80cb088a6f59e8be7dca2b3380dda536.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/good/images/c5107411451dd83bb3506abe42d9a221.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/good/images/d0343919a95208c6b35364eb3eb166b4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/good/images/dcd5b0e5791b21b96492cec3f24a97af.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/good/images/ddd2230a4b0f1a1500dc7159a0ec8ad0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/good/images/f7b389e02a6f26fe1cbdd13159871f6d.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/good/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/good/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/good/utils/good_serilization.py" beforeDir="false" afterPath="$PROJECT_DIR$/good/utils/good_serilization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/good/utils/salt_fish_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/good/utils/salt_fish_spider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/good/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/good/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/keys/pay.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/keys/pay.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/pay.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/keys/pay.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/utils/order_ser.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/utils/order_ser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pay/page1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salt_fish/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/salt_fish/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salt_fish/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/salt_fish/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salt_fish/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/salt_fish/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salt_fish/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/salt_fish/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/user_token_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/user_token_middleware.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,94 +104,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="23" column="21" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/order/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-16">
-              <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/order/utils/order_ser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="69" column="25" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-                <element signature="e#237#3204#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/views/api_order_views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="162" column="43" lean-forward="true" selection-start-line="162" selection-start-column="43" selection-end-line="162" selection-end-column="43" />
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-                <element signature="e#428#869#0" />
-                <element signature="e#359#2546#0" />
-                <element signature="e#3955#4658#0" />
-                <element signature="e#4758#5286#0" />
-                <element signature="e#4872#4958#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/order/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="63" column="27" lean-forward="true" selection-start-line="63" selection-start-column="27" selection-end-line="63" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#59#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/pay/pay_page.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/order/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/salt_fish/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+            <state relative-caret-position="84">
+              <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -175,11 +116,86 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/good/utils/good_serilization.py">
+        <entry file="file://$PROJECT_DIR$/salt_fish/wsgi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="110" column="6" selection-start-line="110" selection-start-column="6" selection-end-line="110" selection-end-column="6" />
+            <state relative-caret-position="245">
+              <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+              <folding>
+                <element signature="e#226#235#0" expanded="true" />
+              </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.python-version">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/user/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2654">
+              <caret line="146" column="24" lean-forward="true" selection-start-line="146" selection-start-column="24" selection-end-line="146" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChineseAnalyzer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/order/keys/pay.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2123">
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/order/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1862">
+              <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/salt_fish/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/salt_fish/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2422" />
           </provider>
         </entry>
       </file>
@@ -189,20 +205,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>请登录</find>
-      <find>data-v-3fb25ee8</find>
-      <find>onoff</find>
-      <find>ttf</find>
-      <find>status</find>
-      <find>login</find>
-      <find>Forg</find>
       <find>set</find>
       <find>font</find>
       <find>hint</find>
@@ -226,6 +235,13 @@
       <find>buyer</find>
       <find>owner</find>
       <find>Order</find>
+      <find>region</find>
+      <find>print</find>
+      <find>发布</find>
+      <find>from</find>
+      <find>good_verify</find>
+      <find>analyzer=ChineseAnalyzer()</find>
+      <find>data-v-015bb090</find>
     </findStrings>
     <replaceStrings>
       <replace>,</replace>
@@ -237,64 +253,64 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/error404.html" />
-        <option value="$PROJECT_DIR$/static/css/main.css" />
-        <option value="$PROJECT_DIR$/user/my_redis_tool.py" />
-        <option value="$PROJECT_DIR$/user/sms.py" />
-        <option value="$PROJECT_DIR$/order/package.json" />
-        <option value="/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/crypto/PublicKey/__init__.py" />
-        <option value="$PROJECT_DIR$/user/salt_user_auth.py" />
-        <option value="$PROJECT_DIR$/order/pay.py" />
-        <option value="$PROJECT_DIR$/order/keys/alipay_public_2048.txt" />
-        <option value="$PROJECT_DIR$/user/User_Token_Middleware.py" />
-        <option value="$PROJECT_DIR$/user/common_response.py" />
-        <option value="$PROJECT_DIR$/user/token_value_calc.py" />
-        <option value="$PROJECT_DIR$/templates/login.html" />
-        <option value="$PROJECT_DIR$/static/article_safe_verify/safe_verify_dict.py" />
-        <option value="$PROJECT_DIR$/user/utils/token_value_calc.py" />
-        <option value="$PROJECT_DIR$/user/user_token_middleware.py" />
-        <option value="$PROJECT_DIR$/user/utils/user_form.py" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/templates/good/good_release.html" />
-        <option value="$PROJECT_DIR$/good/utils/good_form.py" />
-        <option value="$PROJECT_DIR$/user/utils/user_drf_auth.py" />
-        <option value="$PROJECT_DIR$/good/migrations/0018_auto_20190412_0832.py" />
-        <option value="$PROJECT_DIR$/good/admin.py" />
-        <option value="$PROJECT_DIR$/good/urls.py" />
-        <option value="$PROJECT_DIR$/salt_fish/urls.py" />
-        <option value="$PROJECT_DIR$/good/views.py" />
-        <option value="$PROJECT_DIR$/user/models.py" />
-        <option value="$PROJECT_DIR$/good/utils/good_serilization.py" />
-        <option value="$PROJECT_DIR$/good/utils/salt_fish_spider.py" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/80eb8ec9-91e6-469e-ab33-37addb2d6ca8/console.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e59781c2-2a60-4f7f-89a3-cd63efc4ac78/console.sql" />
-        <option value="$PROJECT_DIR$/order/migrations/0002_auto_20190417_1449.py" />
-        <option value="$PROJECT_DIR$/user/views.py" />
-        <option value="$PROJECT_DIR$/salt_fish/settings.py" />
-        <option value="$PROJECT_DIR$/api/views.py" />
-        <option value="$PROJECT_DIR$/api/views/good_views.py" />
-        <option value="$PROJECT_DIR$/api/views/order_views.py" />
-        <option value="$PROJECT_DIR$/order/admin.py" />
-        <option value="$PROJECT_DIR$/good/models.py" />
-        <option value="$PROJECT_DIR$/README" />
-        <option value="$PROJECT_DIR$/db/add_data.py" />
-        <option value="$PROJECT_DIR$/api/views/api_good_views.py" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/order/models.py" />
-        <option value="$PROJECT_DIR$/order/utils/order_ser.py" />
-        <option value="$PROJECT_DIR$/api/urls.py" />
-        <option value="$PROJECT_DIR$/api/views/api_order_views.py" />
         <option value="$PROJECT_DIR$/order/keys/pay.py" />
-        <option value="$PROJECT_DIR$/order/urls.py" />
-        <option value="$PROJECT_DIR$/templates/pay/pay_page.html" />
+        <option value="$PROJECT_DIR$/api/views/api_user_views.py" />
+        <option value="$PROJECT_DIR$/user/utils/user_address_ser.py" />
+        <option value="$PROJECT_DIR$/order/models.py" />
+        <option value="$PROJECT_DIR$/db/add_data.py" />
+        <option value="$PROJECT_DIR$/good/utils/content_verify.py" />
+        <option value="$PROJECT_DIR$/good/utils/pic_verify.py" />
+        <option value="$PROJECT_DIR$/good/utils/good_celery_task.py" />
+        <option value="$PROJECT_DIR$/good/utils/celery_task_result.py" />
+        <option value="$PROJECT_DIR$/good/utils/add_celery_task.py" />
+        <option value="$PROJECT_DIR$/good/models.py" />
+        <option value="$PROJECT_DIR$/good/migrations/0004_auto_20190425_0925.py" />
+        <option value="$PROJECT_DIR$/good/urls.py" />
+        <option value="$PROJECT_DIR$/good/utils/celery_verify_task/celeryconfig.py" />
+        <option value="$PROJECT_DIR$/good/utils/celery_verify_task/add_celery_task.py" />
+        <option value="$PROJECT_DIR$/good/utils/celery_verify_task/good_celery_task.py" />
+        <option value="$PROJECT_DIR$/good/utils/celery_verify_task/celery_result_task.py" />
+        <option value="$PROJECT_DIR$/good/utils/celery_verify_task/celery.py" />
+        <option value="$PROJECT_DIR$/api/views/api_order_views.py" />
+        <option value="$PROJECT_DIR$/celery_verify_task/add_celery_task.py" />
+        <option value="$PROJECT_DIR$/celery_verify_task/celery.py" />
+        <option value="$PROJECT_DIR$/celery_verify_task/good_celery_task.py" />
+        <option value="$PROJECT_DIR$/celery_verify_task/celery_result_task.py" />
+        <option value="$PROJECT_DIR$/api/views/api_verify.py" />
+        <option value="$PROJECT_DIR$/celery_verify_task/content_verify.py" />
+        <option value="$PROJECT_DIR$/api/urls.py" />
+        <option value="$PROJECT_DIR$/api/views/api_verify_views.py" />
+        <option value="$PROJECT_DIR$/celery_verify_task/pic_verify.py" />
+        <option value="$PROJECT_DIR$/templates/search/indexes/good/good_text.txt" />
+        <option value="$PROJECT_DIR$/good/whoosh_cn_backend.py" />
+        <option value="$USER_HOME$/.pyenv/versions/3.6.4/lib/python3.6/site-packages/django/shortcuts.py" />
+        <option value="$USER_HOME$/.pyenv/versions/3.6.4/lib/python3.6/site-packages/haystack/forms.py" />
+        <option value="$USER_HOME$/.pyenv/versions/3.6.4/lib/python3.6/site-packages/haystack/views.py" />
+        <option value="$PROJECT_DIR$/good/search_indexes.py" />
+        <option value="$PROJECT_DIR$/ChineseAnalyzer.py" />
+        <option value="$PROJECT_DIR$/good/views.py" />
+        <option value="$PROJECT_DIR$/templates/my_test.html" />
+        <option value="$PROJECT_DIR$/templates/search/search.html" />
+        <option value="$PROJECT_DIR$/good/utils/good_serilization.py" />
+        <option value="$PROJECT_DIR$/api/views/api_good_views.py" />
+        <option value="$PROJECT_DIR$/README" />
+        <option value="$PROJECT_DIR$/good/utils/salt_fish_spider.py" />
+        <option value="$PROJECT_DIR$/salt_fish/settings.py" />
+        <option value="$PROJECT_DIR$/templates/login.html" />
+        <option value="$PROJECT_DIR$/templates/web_cheat.html" />
+        <option value="$PROJECT_DIR$/salt_fish/urls.py" />
+        <option value="$PROJECT_DIR$/user/models.py" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/user/views.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/order/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="41" />
-    <option name="y" value="23" />
-    <option name="width" value="1391" />
+    <option name="x" value="240" />
+    <option name="y" value="24" />
+    <option name="width" value="1370" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -305,7 +321,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -321,36 +336,7 @@
             <path>
               <item name="salt_fish" type="b2602c69:ProjectViewProjectNode" />
               <item name="salt_fish" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="salt_fish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="salt_fish" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="salt_fish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="salt_fish" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="salt_fish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="salt_fish" type="462c0819:PsiDirectoryNode" />
               <item name="good" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="salt_fish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="salt_fish" type="462c0819:PsiDirectoryNode" />
-              <item name="good" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="salt_fish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="salt_fish" type="462c0819:PsiDirectoryNode" />
-              <item name="good" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="salt_fish" type="b2602c69:ProjectViewProjectNode" />
@@ -367,13 +353,8 @@
               <item name="salt_fish" type="b2602c69:ProjectViewProjectNode" />
               <item name="salt_fish" type="462c0819:PsiDirectoryNode" />
               <item name="order" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="salt_fish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="salt_fish" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="keys" type="462c0819:PsiDirectoryNode" />
+              <item name="pay.py" type="8704e2dd:PyFileNode" />
             </path>
             <path>
               <item name="salt_fish" type="b2602c69:ProjectViewProjectNode" />
@@ -383,41 +364,22 @@
             <path>
               <item name="salt_fish" type="b2602c69:ProjectViewProjectNode" />
               <item name="salt_fish" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="salt_fish" type="b2602c69:ProjectViewProjectNode" />
               <item name="salt_fish" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap-3.3.7-dist" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="salt_fish" type="b2602c69:ProjectViewProjectNode" />
               <item name="salt_fish" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="salt_fish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="salt_fish" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="good" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="salt_fish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="salt_fish" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="pay" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="salt_fish" type="b2602c69:ProjectViewProjectNode" />
               <item name="salt_fish" type="462c0819:PsiDirectoryNode" />
               <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="salt_fish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="salt_fish" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="salt_fish" type="b2602c69:ProjectViewProjectNode" />
@@ -429,6 +391,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -437,25 +400,25 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/good" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/good" />
+      <recent name="$PROJECT_DIR$/good/images" />
       <recent name="$PROJECT_DIR$/order/templates/pay" />
       <recent name="$PROJECT_DIR$/order/keys" />
       <recent name="$PROJECT_DIR$/order" />
-      <recent name="$PROJECT_DIR$/static" />
-      <recent name="$PROJECT_DIR$/static/img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/good/utils/celery_verify_task" />
+      <recent name="$PROJECT_DIR$/good/utils" />
       <recent name="$PROJECT_DIR$/api/views" />
       <recent name="$PROJECT_DIR$/order/keys" />
-      <recent name="$PROJECT_DIR$/user/utils" />
-      <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/static/img" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -470,7 +433,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.add_data">
+  <component name="RunManager" selected="Django server.salt_fish">
     <configuration name="add_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="salt_fish" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -537,28 +500,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pay" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="salt_fish" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/order" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/order/keys/pay.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="safe_verify_dict" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="salt_fish" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -573,6 +514,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/static/article_safe_verify/safe_verify_dict.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="salt_fish_spider" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="salt_fish" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/good/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/good/utils/salt_fish_spider.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -607,19 +570,19 @@
     </configuration>
     <list>
       <item itemvalue="Django server.salt_fish" />
-      <item itemvalue="Python.good_serilization" />
-      <item itemvalue="Python.pay" />
-      <item itemvalue="Python.safe_verify_dict" />
-      <item itemvalue="Python.models" />
       <item itemvalue="Python.add_data" />
+      <item itemvalue="Python.good_serilization" />
+      <item itemvalue="Python.models" />
+      <item itemvalue="Python.safe_verify_dict" />
+      <item itemvalue="Python.salt_fish_spider" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.salt_fish_spider" />
         <item itemvalue="Python.add_data" />
         <item itemvalue="Python.models" />
         <item itemvalue="Python.good_serilization" />
         <item itemvalue="Python.safe_verify_dict" />
-        <item itemvalue="Python.pay" />
       </list>
     </recent_temporary>
   </component>
@@ -653,7 +616,13 @@
       <workItem from="1555546608648" duration="1947000" />
       <workItem from="1555552129201" duration="598000" />
       <workItem from="1555565237013" duration="731000" />
-      <workItem from="1555566877034" duration="22036000" />
+      <workItem from="1555566877034" duration="24193000" />
+      <workItem from="1555725072777" duration="1050000" />
+      <workItem from="1555930816607" duration="5093000" />
+      <workItem from="1555979968033" duration="31853000" />
+      <workItem from="1556022838435" duration="23336000" />
+      <workItem from="1556100571585" duration="41697000" />
+      <workItem from="1556185791002" duration="71688000" />
     </task>
     <task id="LOCAL-00001" summary="增加商品和订单app,将应用的model层内容分隔开">
       <created>1554643705854</created>
@@ -697,11 +666,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555494450869</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="重构order部分的数据库迁移文件">
+      <created>1555633181790</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1555633181791</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243267000" />
+    <option name="totallyTimeSpent" value="444709000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -713,15 +689,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="41" y="23" width="1391" height="877" extended-state="0" />
+    <frame x="240" y="24" width="1370" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23202372" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23343374" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32939634" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49820274" weight="0.3464567" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.497557" weight="0.49525103" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39895013" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -729,45 +705,50 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50179726" side_tool="true" weight="0.32939634" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.502443" side_tool="true" weight="0.3464567" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49964055" weight="0.32921347" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32939634" />
-      <window_info anchor="bottom" id="manage.py@salt_fish" order="14" sideWeight="0.49892163" weight="0.48818898" />
+      <window_info anchor="bottom" id="manage.py@salt_fish" order="14" sideWeight="0.49892163" weight="0.48689654" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="15" weight="0.32939634" />
+      <window_info anchor="bottom" id="File Transfer" order="16" weight="0.29790026" />
+      <window_info anchor="bottom" id="Statistic" order="17" visible="true" weight="0.328084" />
+      <window_info anchor="bottom" id="REST Client" order="18" weight="0.40944883" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.32987398" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.32980457" />
       <window_info anchor="right" id="Redis Servers" order="4" weight="0.32913268" />
-      <window_info anchor="right" id="Database" order="5" weight="0.32616752" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32583398" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.23202372" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14476615" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32939634" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49820274" visible="true" weight="0.3464567" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39895013" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32939634" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50179726" side_tool="true" weight="0.32939634" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49964055" weight="0.32921347" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
-      <window_info anchor="bottom" id="Database Console" order="13" weight="0.32939634" />
-      <window_info anchor="bottom" id="manage.py@salt_fish" order="14" sideWeight="0.49892163" weight="0.48818898" />
-      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="15" weight="0.32939634" />
+      <window_info anchor="bottom" id="Statistic" order="0" weight="0.32939634" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32939634" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49820274" weight="0.3464567" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.39895013" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32939634" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50179726" side_tool="true" weight="0.32939634" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49964055" weight="0.32921347" />
+      <window_info anchor="bottom" id="Python Console" order="13" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.32939634" />
+      <window_info anchor="bottom" id="manage.py@salt_fish" order="15" sideWeight="0.49892163" weight="0.48818898" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="16" weight="0.32939634" />
+      <window_info anchor="bottom" id="File Transfer" order="17" weight="0.32939634" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32987398" />
       <window_info anchor="right" id="Redis Servers" order="4" weight="0.32913268" />
-      <window_info anchor="right" id="Database" order="5" weight="0.32616752" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32585138" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -779,7 +760,8 @@
     <MESSAGE value="完成用户通过release路径POST数据时的商品发布功能,涉及商品类和商品图片类的信息的保存到数据库,以及图片的保存到服务器端的功能" />
     <MESSAGE value="完成通过/good/edit/good_id接口通过put方法传递数据,进行商品信息和商品对应图片信息的修改,如果原图被修改,原图江将被删除" />
     <MESSAGE value="商品部分接口全部完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="商品部分接口全部完成" />
+    <MESSAGE value="重构order部分的数据库迁移文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="重构order部分的数据库迁移文件" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -790,6 +772,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/salt_fish$sms.coverage" NAME="sms Coverage Results" MODIFIED="1554629568683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/user" />
+    <SUITE FILE_PATH="coverage/salt_fish$salt_fish_spider.coverage" NAME="salt_fish_spider Coverage Results" MODIFIED="1556272674007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/good/utils" />
     <SUITE FILE_PATH="coverage/salt_fish$safe_verify_dict.coverage" NAME="safe_verify_dict Coverage Results" MODIFIED="1554790019918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/static/article_safe_verify" />
     <SUITE FILE_PATH="coverage/salt_fish$pay.coverage" NAME="pay Coverage Results" MODIFIED="1554647275693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/order" />
     <SUITE FILE_PATH="coverage/salt_fish$good_serilization.coverage" NAME="good_serilization Coverage Results" MODIFIED="1554960040973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/good/utils" />
@@ -806,40 +789,14 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/python_stubs/-1199943127/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="4882" column="8" selection-start-line="4882" selection-start-column="8" selection-end-line="4882" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/rest_framework/serializers.py" />
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/migrations/__init__.py">
+    <entry file="file://$PROJECT_DIR$/good/images1.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$USER_HOME$/.pyenv/versions/3.6.4/lib/python3.6/site-packages/django/db/models/manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="174" selection-start-line="174" selection-end-line="174" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/good/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/order/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/good/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/good/admin.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -850,284 +807,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/order/migrations/0002_auto_20190418_1548.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/order/migrations/0003_auto_20190418_1558.py">
+    <entry file="file://$PROJECT_DIR$/good/utils/salt_fish_spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-92" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/order/migrations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/order/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="67" column="23" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="23" />
+        <state>
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/good/migrations/0002_auto_20190417_1442.py">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/93d8db2c-c6a8-42c8-95ca-81be0fc133c1/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/order/migrations/0002_auto_20190418_1606.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+    <entry file="uml://DATABASE/93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.auth_permission">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.auth_permission</OriginalElement>
+          <nodes>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.auth_permission</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.django_content_type</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.4531576168217473" x="2028.995698411949" y="530.1016482179986" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/order/migrations/0003_auto_20190418_1607.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/good/migrations/0002_auto_20190418_1606.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/user/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-397">
-          <caret line="71" column="7" selection-start-line="71" selection-start-column="7" selection-end-line="71" selection-end-column="7" />
+        <state relative-caret-position="-965">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="23" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.python-version">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e59781c2-2a60-4f7f-89a3-cd63efc4ac78/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/.pyenv/versions/3.6.4/lib/python3.6/site-packages/pymysql/connections.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-172">
-          <caret line="115" column="6" selection-start-line="115" selection-start-column="6" selection-end-line="115" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/salt_fish/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1254">
-          <caret line="57" column="31" lean-forward="true" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-214">
-          <caret line="42" column="12" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://e59781c2-2a60-4f7f-89a3-cd63efc4ac78/schema/salt_fish/table/good_category">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.pyenv/versions/3.6.4/lib/python3.6/site-packages/pymysql/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="92" column="35" selection-start-line="92" selection-start-column="35" selection-end-line="92" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/order/keys/alipay_public_2048.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/add_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="58" column="1" lean-forward="true" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/views/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="das://e59781c2-2a60-4f7f-89a3-cd63efc4ac78/schema/salt_fish/table/good_goodpictures">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://e59781c2-2a60-4f7f-89a3-cd63efc4ac78/schema/salt_fish/table/user_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/good/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-574">
-          <caret line="57" column="32" lean-forward="true" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user/utils/token_value_calc.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="das://e59781c2-2a60-4f7f-89a3-cd63efc4ac78/schema/salt_fish/table/good_goodstatusandsellmethod">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://e59781c2-2a60-4f7f-89a3-cd63efc4ac78/schema/salt_fish/table/order_orderstatusandbillstatus">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://e59781c2-2a60-4f7f-89a3-cd63efc4ac78/schema/salt_fish/table/good_good">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user/utils/user_drf_auth.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+        <state relative-caret-position="-602">
+          <folding>
+            <element signature="e#13717#13752#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/good/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        <state relative-caret-position="451">
+          <caret line="85" column="28" lean-forward="true" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/views/api_good_views.py">
+    <entry file="file://$PROJECT_DIR$/user/sms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="188" column="34" lean-forward="true" selection-start-line="188" selection-start-column="34" selection-end-line="188" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#1873#7312#0" />
-          </folding>
+        <state relative-caret-position="201">
+          <caret line="107" column="9" lean-forward="true" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/urls.py">
+    <entry file="file://$PROJECT_DIR$/user/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/good/utils/good_serilization.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="110" column="6" selection-start-line="110" selection-start-column="6" selection-end-line="110" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/order/keys/pay.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/salt_fish/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/views/api_order_views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="162" column="43" lean-forward="true" selection-start-line="162" selection-start-column="43" selection-end-line="162" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-            <element signature="e#428#869#0" />
-            <element signature="e#359#2546#0" />
-            <element signature="e#3955#4658#0" />
-            <element signature="e#4758#5286#0" />
-            <element signature="e#4872#4958#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/order/utils/order_ser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="69" column="25" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#237#3204#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pay/pay_page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/order/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
+        <state relative-caret-position="110">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
@@ -1136,26 +884,292 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/order/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        <state relative-caret-position="516">
+          <caret line="51" column="15" lean-forward="true" selection-start-line="51" selection-start-column="15" selection-end-line="51" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="das://e59781c2-2a60-4f7f-89a3-cd63efc4ac78/schema/salt_fish/table/order_order">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+    <entry file="file://$PROJECT_DIR$/user/utils/user_form.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/utils/salt_user_auth.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/utils/token_value_calc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="902">
+          <caret line="41" column="28" lean-forward="true" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/utils/user_drf_auth.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/user_token_middleware.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/good/utils/good_serilization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/good/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/93d8db2c-c6a8-42c8-95ca-81be0fc133c1.SCHEMA:salt_fish">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
+          <ID>DATABASE</ID>
+          <OriginalElement>93d8db2c-c6a8-42c8-95ca-81be0fc133c1.SCHEMA:salt_fish</OriginalElement>
+          <nodes>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.order_order</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.good_good</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.django_migrations</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.user_user_user_permissions</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.order_delivery</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.user_user_groups</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.user_useraddress</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.good_goodstatusandsellmethod</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.user_user</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.good_category</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.good_good_star_users</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.good_comment</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.auth_permission</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.order_orderstatusandbillstatus</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.user_chatrecord</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.auth_group</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.django_content_type</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.user_idcard</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.django_admin_log</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.auth_group_permissions</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.good_goodpictures</node>
+            <node x="" y="">93d8db2c-c6a8-42c8-95ca-81be0fc133c1.TABLE:salt_fish.django_session</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.9909788830121817" x="1102.6273526822715" y="932.5554926920917" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="15159" column="34" lean-forward="true" selection-start-line="15159" selection-start-column="34" selection-end-line="15159" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="4" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/order/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="628" column="16" lean-forward="true" selection-start-line="628" selection-start-column="16" selection-end-line="628" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/views/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/views/api_good_views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="59" column="11" lean-forward="true" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/views/api_order_views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="160" column="35" lean-forward="true" selection-start-line="160" selection-start-column="35" selection-end-line="160" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/views/api_user_views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/views/api_verify_views.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/admin.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/good/images/0a04dad646d0f803ab153ecda161a35f.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/add_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1939">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/uwsgi_params">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/uwsgi.ini">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/django.conf">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/order/keys/pay.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2123">
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/order/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="63" column="27" lean-forward="true" selection-start-line="63" selection-start-column="27" selection-end-line="63" selection-end-column="27" />
+        <state relative-caret-position="-1862">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/salt_fish/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/salt_fish/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2422" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/salt_fish/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/salt_fish/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding>
+            <element signature="e#226#235#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChineseAnalyzer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.python-version">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2654">
+          <caret line="146" column="24" lean-forward="true" selection-start-line="146" selection-start-column="24" selection-end-line="146" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>

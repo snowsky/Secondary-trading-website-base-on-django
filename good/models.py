@@ -23,7 +23,7 @@ class Good(models.Model):
     # sell_method = models.SmallIntegerField(choices=sell_method_choices, default=2, verbose_name='交易方式')
     # good_status = models.SmallIntegerField(choices=good_status_choices, default=0, verbose_name='商品状态')
     sell_method = models.ForeignKey(to='GoodStatusAndSellMethod', related_name='good_sell_method', null=True, on_delete=models.SET_NULL, db_constraint=False, verbose_name='交易方式')
-    good_status = models.ForeignKey(to='GoodStatusAndSellMethod', related_name='good_status', null=True, on_delete=models.SET_NULL, db_constraint=False, verbose_name='商品状态')
+    good_status = models.ForeignKey(to='GoodStatusAndSellMethod', default=1, related_name='good_status', null=True, on_delete=models.SET_NULL, db_constraint=False, verbose_name='商品状态')
     owner_user = models.ForeignKey(to='user.User', related_name='good_owner_user', null=True, on_delete=models.SET_NULL, db_constraint=False, verbose_name='商品发布者')
     # 加一个关注商品的用户
     star_users = models.ManyToManyField(to='user.User', related_name='good_star_users', db_constraint=False, verbose_name='关注用户')
